@@ -26,20 +26,11 @@ $f3->set('UI','ui/');		// folder for View templates
 $f3->route('GET /',
     function ($f3)
     {
-        $f3->set('html_title','Style Transfer');
-        $f3->set('content','index.html');
-        echo template::instance()->render('layout.html');
-    }
-);
-
-/*$f3->route('GET /',
-    function ($f3)
-    {
         $f3->set('html_title','Simple Example Home');
         $f3->set('content','simpleHome.html');
         echo template::instance()->render('layout.html');
     }
-);*/
+);
 
 //==============================================================================
 // When using GET, provide a form for the user to upload an image via the file input type
@@ -149,6 +140,15 @@ $f3->route('GET /test', // have a test page to print out variables
     }
 );
 //==============================================================================
+
+$f3->route('GET /style-transfer',
+    function ($f3)
+    {
+        $f3->set('html_title','Style Transfer');
+        $f3->set('content','index.html');
+        echo template::instance()->render('layout.html');
+    }
+);
 
 /*$f3->route('GET /style-transfer',
     function($f3)
