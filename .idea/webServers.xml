@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="5e1768ad-8d5f-489d-8430-633146632e32" name="DWDWebsite1" url="http://s2250677.edinburgh.domains/DWDWebsite1">
+        <fileTransfer rootFolder="/home/sedin110" accessType="SFTP" host="s2250677.edinburgh.domains" port="22" sshConfigId="bb077ad8-5612-48d9-bda9-5823b45fbd32" sshConfig="sedin110@s2250677.edinburgh.domains:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
