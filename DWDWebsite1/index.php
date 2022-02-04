@@ -21,7 +21,7 @@ $f3->set('UI','ui/');		// folder for View templates
 //==============================================================================
 // Simple Example URL application routings
 
-//home page (index.html) -- actually just shows form entry page with a different title
+//home page (styletransfer.html) -- actually just shows form entry page with a different title
 
 $f3->route('GET /',
     function ($f3)
@@ -145,7 +145,7 @@ $f3->route('GET /style-transfer',
     function ($f3)
     {
         $f3->set('html_title','Style Transfer');
-        $f3->set('content','index.html');
+        $f3->set('content','styletransfer.html');
         echo template::instance()->render('layout.html');
     }
 );
