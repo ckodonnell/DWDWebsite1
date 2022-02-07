@@ -29,7 +29,6 @@ nav li {
 
 nav li a {
     /*display: inline-block;*/
-    height: 60px;
     display: block;
     color: #ffffff;
     white-space: nowrap;

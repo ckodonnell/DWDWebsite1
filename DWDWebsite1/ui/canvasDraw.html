@@ -35,20 +35,35 @@
             background-color: lightgray;
         }
 
+        #buttons {
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+        }
+
+        #buttons > input {
+            padding: 10px;
+            display: block;
+            margin-top: 5px;
+        }
+
     </style>
 </head>
 
 <body>
 
 <div id="container"></div>
-    <!-- delete menu -->
-    <div id="menu">
-        <div>
-            <button id="delete-button">Delete</button>
-        </div>
-    </div>
 
+<!-- save button -->
+<div id="buttons"><button id="save">Save as image</button></div>
+
+<!-- delete menu -->
+<div id="menu">
+    <div>
+        <button id="delete-button">Delete</button>
+    </div>
 </div>
+
 
 <script>
     var width = window.innerWidth;
@@ -297,6 +312,25 @@
         shape.fill(fill);
 
     }
+
+    function downloadURI(uri, name) {
+        var link = document.createElement('a');
+        link.download = name;
+        link.href = uri;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        delete link;
+    }
+
+    document.getElementById('save').addEventListener(
+        'click',
+        function () {
+            var dataURL = stage.toDataURL({ pixelRatio: 3 });
+            downloadURI(dataURL, 'stage.png');
+        },
+        false
+    );
 
 </script>
 </body>
