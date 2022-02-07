@@ -150,6 +150,24 @@ $f3->route('GET /style-transfer',
     }
 );
 
+$f3->route('GET /canvas',
+    function ($f3)
+    {
+        $f3->set('html_title','Canvas');
+        $f3->set('content','canvas.html');
+        echo template::instance()->render('layout.html');
+    }
+);
+
+$f3->route('GET /button',
+    function ($f3)
+    {
+        $f3->set('html_title','button');
+        $f3->set('content','testButton.html');
+        echo template::instance()->render('layout.html');
+    }
+);
+
 /*$f3->route('GET /style-transfer',
     function($f3)
     {   header("Content-Type: application/json", false);

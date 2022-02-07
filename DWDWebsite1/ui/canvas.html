@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://unpkg.com/konva@8.3.2/konva.min.js"></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://s2250677.edinburgh.domains/DWDWebsite1/css/navBar.css">
+    <link rel="stylesheet" href="https://s2250677.edinburgh.domains/DWDWebsite1/css/canvasHelp.css">
+    <title>Konva Modify Shape Color on Click Demo</title>
+    <style>
+    </style>
+</head>
+
+<body>
+<!-- navigation bar -->
+<nav>
+    <ul>
+        <a href="{{ @BASE }}/simpleform">Simple Form</a>
+        <a href="{{ @BASE }}/style-transfer"> Style Transfer</a>
+        <a href="{{ @BASE }}/button">About</a>
+        <a href="{{ @BASE }}/canvas">Canvas</a>
+    </ul>
+</nav>
+
+<h1>Make your own cubist portrait!</h1>
+
+<iframe src="https://s2250677.edinburgh.domains/DWDWebsite1/ui/canvasDraw.html" width=295 height=490 loading="lazy" allowfullscreen=""></iframe>
+<!-- help menu and popup -->
+
+<a class="button" href="#popup1">Help</a>
+
+<div id="popup1" class="overlay">
+    <div class="popup">
+        <h2>Need some help?</h2>
+        <a class="close" href="#">&times;</a>
+        <div class="content">
+            Welcome to the Canvas tool! Drag and drop the shapes on the canvas to create your own original cubist art!
+            <p>
+                To delete shapes: Right-click on the shape you want to delete, and select "delete" from the pop-up menu.
+            </p>
+            <p>
+                To resize/rotate shapes: click on the shape and a blue outline will appear. Drag the dots on the borders of the outline to resize, and drag the dot that looks like an antenna to rotate. Click on the whitespace of the canvas to rid of the selection tool.
+            </p>
+            <p>
+                To change shape's color: click on the shape until the desired color appears.
+            </p>
+        </div>
+    </div>
+</div>
+
+<script>
+
+</script>
+</body>
+</html>

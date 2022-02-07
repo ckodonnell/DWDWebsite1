@@ -3,16 +3,26 @@ A very simple home page View template:
 just contains a link to the form that we will
 use for collecting data.
  -->
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<h1>{{@html_title}}</h1>
-<p>
-    <a href="{{ @BASE }}/simpleform">This will take you to the input form</a>
-</p>
+    <link rel="stylesheet" href="./css/navBar.css">
+    <title>{{@html_title}}</title>
+</head>
 
-<p>
-    <a href="{{ @BASE }}/style-transfer">This will take you to the style transfer</a>
-</p>
+<body>
 
-<p>
-    <a href="{{ @BASE }}/about">Read about this example</a>
-</p>
+<nav>
+    <ul>
+        <a href="{{ @BASE }}/simpleform">Simple Form</a>
+        <a href="{{ @BASE }}/style-transfer"> Style Transfer</a>
+        <a href="{{ @BASE }}/button">About</a>
+        <a href="{{ @BASE }}/canvas">Canvas</a>
+    </ul>
+</nav>
+
+
+</body>
+</html>
