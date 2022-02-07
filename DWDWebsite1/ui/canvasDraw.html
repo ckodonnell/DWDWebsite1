@@ -11,7 +11,7 @@
             margin: 0px;
             padding: 0px;
             overflow: hidden;
-            background-color: rgba(197, 172, 153, 0.64);
+            background-color: rgba(229, 223, 218, 0.64);
         }
 
         #menu {
@@ -112,8 +112,7 @@
             }
 
             sh.on('click', function () {
-                var fill = this.fill() === 'yellow' ? '#00D2FF' : 'yellow';
-                this.fill(fill);
+                changeColor(this);
             });
 
             sh.on('dragstart', function () {
@@ -271,6 +270,33 @@
         menuNode.style.left =
             containerRect.left + stage.getPointerPosition().x + 4 + 'px';
     });
+
+    function changeColor(shape){
+        var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'purple'];
+        let fill;
+        switch (shape.fill()){
+            case 'red':
+                fill = 'orange';
+                break;
+            case 'orange':
+                fill = 'yellow';
+                break;
+            case 'yellow':
+                fill = 'green';
+                break;
+            case 'green':
+                fill = 'blue';
+                break;
+            case 'blue':
+                fill = 'purple';
+                break;
+            case 'purple':
+                fill = 'red';
+                break;
+        }
+        shape.fill(fill);
+
+    }
 
 </script>
 </body>

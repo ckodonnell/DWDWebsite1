@@ -50,7 +50,6 @@ h1 {
     transition: opacity 500ms;
     visibility: hidden;
     opacity: 0;
-    margin: auto;
 }
 .overlay:target {
     visibility: visible;
@@ -58,12 +57,12 @@ h1 {
 }
 
 .popup {
-    margin: 100px;
+    margin: 70px auto;
     padding: 20px;
     background: #fff;
     border-radius: 5px;
     width: 30%;
-    position: absolute;
+    position: relative;
     transition: all 5s ease-in-out;
 }
 
@@ -74,8 +73,8 @@ h1 {
 }
 .popup .close {
     position: relative;
-    top: 20px;
-    right: 30px;
+    top: -57px;
+    right: -400px;
     transition: all 200ms;
     font-size: 30px;
     font-weight: bold;
