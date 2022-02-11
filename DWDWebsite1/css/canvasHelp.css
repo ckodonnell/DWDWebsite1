@@ -8,15 +8,13 @@
 h1 {
     text-align: center;
     font-family: Tahoma, Arial, sans-serif;
-    color: #a853ce;
+    color: #1c1c1c;
     margin: 20px 0;
 }
 
 .box {
     width: 40%;
-    margin: 0 auto;
-    background: rgba(255,255,255,0.2);
-    padding: 35px;
+    background: rgb(23, 23, 23);
     border: 2px solid #fff;
     border-radius: 20px/50px;
     background-clip: padding-box;
@@ -26,18 +24,18 @@ h1 {
 .button {
     font-size: 1em;
     padding: 10px;
-    color: #eed7fc;
-    border: 2px solid #a853ce;
+    color: #ffffff;
+    border: 2px solid #f89069;
     border-radius: 20px/50px;
     text-decoration: none;
     cursor: pointer;
     transition: all 0.3s ease-out;
-    background: #a853ce;
+    background: #e7632a;
     font-family: Tahoma, Arial, sans-serif;
 }
 
 .button:hover {
-    background: #763991;
+    background: #753721;
 }
 
 .overlay {
@@ -57,7 +55,7 @@ h1 {
 }
 
 .popup {
-    margin: 70px auto;
+    margin: 100px auto;
     padding: 20px;
     background: #fff;
     border-radius: 5px;
@@ -82,11 +80,13 @@ h1 {
     color: #333;
 }
 .popup .close:hover {
-    color: #a853ce;
+    color: #b9472c;
 }
 .popup .content {
     max-height: 30%;
     overflow: auto;
+    font-family: Tahoma, Arial, sans-serif;
+
 }
 
 @media screen and (max-width: 700px){

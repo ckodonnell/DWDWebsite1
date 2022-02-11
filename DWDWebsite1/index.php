@@ -168,14 +168,6 @@ $f3->route('GET /button',
     }
 );
 
-/*$f3->route('GET /style-transfer',
-    function($f3)
-    {   header("Content-Type: application/json", false);
-        //$home = '/home/'.get_current_user();
-        $f3->set('modelfiles', '/modelfiles/model.json');
-        //echo template::instance()->render('layout.html');
-    }
-);*/
 //==============================================================================
 // Run the FFF engine //
 $f3->run();

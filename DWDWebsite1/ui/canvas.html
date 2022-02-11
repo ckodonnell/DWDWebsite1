@@ -7,14 +7,71 @@
 
     <link rel="stylesheet" href="https://s2250677.edinburgh.domains/DWDWebsite1/css/navBar.css">
     <link rel="stylesheet" href="https://s2250677.edinburgh.domains/DWDWebsite1/css/canvasHelp.css">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Rammetto+One" />
+
     <title>Konva Modify Shape Color on Click Demo</title>
     <style>
+        html {
+            height: 100%;
+            width: 100%;
+        }
         body{
             padding: 75px;
+            background-color: #1c1c1c;
         }
-        .ifr{
-            text-align: center;
+        .styleSection{
+            position: fixed;
+            height:700px;
+            display: flex;
+            top: 70px;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            padding: 0px;
+            text-align: right;
+            background: url('https://s2250677.edinburgh.domains/DWDWebsite1/images/bg5.png') no-repeat;
+            background-size: 100%;
         }
+
+        .child{
+            display: block;
+        }
+
+        .child2{
+            display: block;
+            right: 60px;
+            top: 525px;
+            position: absolute;
+            height: 30px;
+            width: 60px;
+            padding:10px
+        }
+
+        img{
+            position: absolute;
+            right: 0px;
+            width: 200px;
+            height: 700px;
+        }
+
+        .canvDescription{
+            font-family: "Rammetto One", sans-serif;
+            color: #262626;
+            font-size: 18px;
+            text-align: right;
+            position: absolute;
+            right: 245px;
+        }
+
+
+        iframe{
+            /*box-shadow: 5px 5px 5px #888; */
+            position: absolute;
+            padding: 70px;
+            border: 0px;
+            right: 100px;
+        }
+
     </style>
 </head>
 
@@ -23,22 +80,35 @@
 <div>
 <nav>
     <ul>
+        <li><a href="{{ @BASE }}/"> Home </a></li>
         <li><a href="{{ @BASE }}/style-transfer"> Style Transfer</a></li>
         <li><a href="{{ @BASE }}/canvas">Canvas</a></li>
     </ul>
 </nav>
 </div>
 
-<h1>Make your own cubist portrait!</h1>
 
-<div class ='ifr'>
-    <iframe src="https://s2250677.edinburgh.domains/DWDWebsite1/ui/canvasDraw.html" width=500 height=500 loading="lazy" allowfullscreen=""></iframe>
+<div class = "styleSection">
+    <h1 class = "canvDescription">Make your own cubist portrait!</h1>
+
+    <div class ='child'>
+        <iframe src="https://s2250677.edinburgh.domains/DWDWebsite1/ui/canvasDraw.html" width=500 height=500 loading="lazy" allowfullscreen=""></iframe>
+    </div>
+
+    <div class ='child2'>
+        <a class="button" href="#popup1">Help</a>
+    </div>
+
+    <!--
+   <div class = "child">
+       <img src="https://s2250677.edinburgh.domains/DWDWebsite1/images/bg2.jpg" alt="background">
+   </div> -->
+
 </div>
 
 <p></p>
 
-<!-- help menu and popup -->
-<a class="button" href="#popup1">Help</a>
+<!-- help menu popup -->
 
 <div id="popup1" class="overlay">
     <div class="popup">
