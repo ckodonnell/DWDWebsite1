@@ -1,0 +1,15 @@
+/* css for entire site */
+
+body{
+    padding: 75px;
+    background-color: #1c1c1c;
+    width: 100%;
+}
+
+section {
+    width: 100%;
+    left:0px;
+}
+body section{
+    display:table;
+}

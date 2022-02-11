@@ -159,14 +159,6 @@ $f3->route('GET /canvas',
     }
 );
 
-$f3->route('GET /button',
-    function ($f3)
-    {
-        $f3->set('html_title','button');
-        $f3->set('content','testButton.html');
-        echo template::instance()->render('layout.html');
-    }
-);
 
 //==============================================================================
 // Run the FFF engine //

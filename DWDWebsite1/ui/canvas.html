@@ -5,24 +5,16 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="stylesheet" href="https://s2250677.edinburgh.domains/DWDWebsite1/css/site.css">
     <link rel="stylesheet" href="https://s2250677.edinburgh.domains/DWDWebsite1/css/navBar.css">
     <link rel="stylesheet" href="https://s2250677.edinburgh.domains/DWDWebsite1/css/canvasHelp.css">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Rammetto+One" />
 
-    <title>Konva Modify Shape Color on Click Demo</title>
     <style>
-        html {
-            height: 100%;
-            width: 100%;
-        }
-        body{
-            padding: 75px;
-            background-color: #1c1c1c;
-        }
         .styleSection{
-            position: fixed;
-            height:700px;
-            display: flex;
+            position: absolute;
+            height:90%;
+            display: table-cell;
             top: 70px;
             left: 0;
             bottom: 0;
@@ -31,6 +23,7 @@
             text-align: right;
             background: url('https://s2250677.edinburgh.domains/DWDWebsite1/images/bg5.png') no-repeat;
             background-size: 100%;
+            box-shadow: 0 6px 12px 0 rgba(124, 124, 124, 0.5);
         }
 
         .child{
@@ -47,11 +40,7 @@
             padding:10px
         }
 
-        img{
-            position: absolute;
-            right: 0px;
-            width: 200px;
-            height: 700px;
+        .paintingExample{
         }
 
         .canvDescription{
@@ -72,6 +61,27 @@
             right: 100px;
         }
 
+        .ExamplePaintingGallery{
+            background-color: #691e1e;
+            padding: 40px;
+            font-family: "Rammetto One", sans-serif;
+            position: absolute;
+            left: 0px;
+            top: 710px;
+            display: table-cell;
+        }
+
+        .gallery{
+            background-color: #691e1e;
+            display: flex;
+            margin: 80px;
+        }
+
+        h2{
+            color: #eee1d8;
+        }
+
+
     </style>
 </head>
 
@@ -87,7 +97,7 @@
 </nav>
 </div>
 
-
+<section>
 <div class = "styleSection">
     <h1 class = "canvDescription">Make your own cubist portrait!</h1>
 
@@ -99,16 +109,24 @@
         <a class="button" href="#popup1">Help</a>
     </div>
 
-    <!--
-   <div class = "child">
-       <img src="https://s2250677.edinburgh.domains/DWDWebsite1/images/bg2.jpg" alt="background">
-   </div> -->
-
 </div>
+</section>
 
-<p></p>
-
-<!-- help menu popup -->
+<section class = 'ExamplePaintingGallery'>
+<h2> Check out these example paintings!</h2>
+<div class = "gallery">
+    <div class = "paintingExample">
+        <img src="https://s2250677.edinburgh.domains/DWDWebsite1/images/monster.png" alt="monster">
+    </div>
+    <div class = "paintingExample">
+        <img src="https://s2250677.edinburgh.domains/DWDWebsite1/images/shapes.png" alt="shapes">
+    </div>
+    <div class = "paintingExample">
+        <img src="https://s2250677.edinburgh.domains/DWDWebsite1/images/sailboat.png" alt="sailboat">
+    </div>
+</div>
+</section>
+<!-- help menu popup-->
 
 <div id="popup1" class="overlay">
     <div class="popup">
@@ -128,7 +146,6 @@
         </div>
     </div>
 </div>
-
 <script>
 
 </script>
