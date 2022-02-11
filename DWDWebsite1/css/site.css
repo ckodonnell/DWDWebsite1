@@ -1,15 +1,18 @@
 /* css for entire site */
 
-body{
+html, body{
     padding: 75px;
     background-color: #1c1c1c;
-    width: 100%;
+    width:100%;
+    max-width:100%;
+    overflow-x:hidden;
 }
 
 section {
-    width: 100%;
-    left:0px;
+    width: 100vw;
+    max-width:100%;
 }
 body section{
     display:table;
+    width:100%;
 }
