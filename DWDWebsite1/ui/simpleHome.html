@@ -16,7 +16,7 @@ use for collecting data.
 
     <style>
         .banner{
-            background: url('https://s2250677.edinburgh.domains/DWDWebsite1/images/bg3.png') no-repeat;
+            background: url('https://s2250677.edinburgh.domains/DWDWebsite1/images/bg3.2.png') no-repeat;
             position: fixed;
             height:100%;
             display: flex;
@@ -43,6 +43,22 @@ use for collecting data.
             height: 600px;
             width:600px;
         }
+
+        .eyes{
+            top: 366px;
+            width: 227px;
+            height: 89px;
+            left: 48px;
+            background-image: url('https://s2250677.edinburgh.domains/DWDWebsite1/images/eyes.png');
+            animation: moveX 2s steps(12) infinite;
+            z-index: 100;
+            position:absolute;
+        }
+
+        @keyframes moveX{
+            from{background-position-x:0px;}
+            to{background-position-x: -2761px;}
+        }
     </style>
 </head>
 
@@ -56,6 +72,8 @@ use for collecting data.
         <li><a href="{{ @BASE }}/canvas">Canvas</a></li>
     </ul>
 </nav>
+
+<div class = "eyes"></div>
 
 
 <div class = "banner">

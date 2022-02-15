@@ -48,6 +48,7 @@ h1 {
     transition: opacity 500ms;
     visibility: hidden;
     opacity: 0;
+    z-index: 200;
 }
 .overlay:target {
     visibility: visible;
@@ -62,12 +63,14 @@ h1 {
     width: 35%;
     position: relative;
     transition: all 5s ease-in-out;
+    z-index: 200;
 }
 
 .popup h2 {
     margin-top: 0;
     color: #333;
     font-family: Tahoma, Arial, sans-serif;
+    z-index: 200;
 }
 .popup .close {
     position: relative;
@@ -78,6 +81,7 @@ h1 {
     font-weight: bold;
     text-decoration: none;
     color: #333;
+    z-index: 200;
 }
 .popup .close:hover {
     color: #b9472c;
@@ -86,6 +90,7 @@ h1 {
     max-height: 30%;
     overflow: auto;
     font-family: Tahoma, Arial, sans-serif;
+    z-index: 200;
 
 }
 
