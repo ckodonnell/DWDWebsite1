@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js" type="text/javascript"></script>
+    <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.js" type="text/javascript"></script>
+
+    <link rel="stylesheet" href="https://s2250677.edinburgh.domains/DWDWebsite1/css/site.css">
+    <link rel="stylesheet" href="https://s2250677.edinburgh.domains/DWDWebsite1/css/site.css">
+    <link rel="stylesheet" href="https://s2250677.edinburgh.domains/DWDWebsite1/css/navBar.css">
+    <link rel="stylesheet" href="https://s2250677.edinburgh.domains/DWDWebsite1/css/cubismGallery.css">
+    <link rel="stylesheet" href="https://s2250677.edinburgh.domains/DWDWebsite1/css/slideshow.css">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Rammetto+One" />
+    <style>
+        .galleryArray{
+            background-color: #e86349;
+            top: 530px;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            padding: 0px;
+            position: absolute;
+            text-align: center;
+            font-family: "Rammetto One", sans-serif;
+
+        }
+        .galleryArray h2{
+            color: #eee1d8;
+            background-color: #e86349;
+        }
+
+    </style>
+</head>
+<body>
+
+<div>
+    <nav>
+        <ul>
+            <li><a href="{{ @BASE }}/"> Home </a></li>
+            <li><a href="{{ @BASE }}/learn"> Learn </a></li>
+            <li><a href="{{ @BASE }}/style-transfer"> Style Transfer</a></li>
+            <li><a href="{{ @BASE }}/canvas">Canvas</a></li>
+        </ul>
+    </nav>
+</div>
+
+<div class="slider__wrapper">
+    <div class="flex__container flex--pikachu flex--active" data-slide="1">
+        <div class="flex__item flex__item--left">
+            <div class="flex__content">
+                <p class="text--sub">Overview...</p>
+                <h1 class="text--big">Cubism</h1>
+                <p class="text--normal">Cubism is an art form from the early 20th century characterized by geometric shapes. It is an abstract form of art where the shapes come together to form a complete picture. If you can't see it at first, try stepping away from the canvas and looking from a new angle! Please edit this, it isn't fact, I just made it up to fill space.</p>
+            </div>
+            <!--<p class="text__background">Cubism</p>-->
+        </div>
+        <div class="flex__item flex__item--right"></div>
+        <img class="pokemon__img" src="https://s2250677.edinburgh.domains/DWDWebsite1/images/fresnaye.jpg" />
+    </div>
+    <div class="flex__container flex--piplup animate--start" data-slide="2">
+        <div class="flex__item flex__item--left">
+            <div class="flex__content">
+                <p class="text--sub">Characteristics of Cubism...</p>
+                <h1 class="text--big">Style</h1>
+                <p class="text--normal">Cubism has a very distinct, open-form style. It can be lined or lineless, with bold colors or without. In many respects, it draws inspiration from Futurism. Please edit this, it isn't fact, I just made it up to fill space. </p>
+            </div>
+            <!--<p class="text__background">Style</p> -->
+        </div>
+        <div class="flex__item flex__item--right"></div>
+        <img class="pokemon__img" src="https://s2250677.edinburgh.domains/DWDWebsite1/images/cezanne.jpeg" />
+    </div>
+    <div class="flex__container flex--blaziken animate--start" data-slide="3">
+
+        <div class="flex__item flex__item--left">
+            <div class="flex__content">
+                <p class="text--sub">A Growing Movement...</p>
+                <h1 class="text--big">History</h1>
+                <p class="text--normal"> Cubism arose post-WWI, when people were experimenting with different modes of expression. The so-called "Lost Generation" created cubism as a different way of viewing the world when little made sense anymore. Please edit this, it isn't fact, I just made it up to fill space. </p>
+            </div>
+            <!--<p class="text__background">History</p> -->
+        </div>
+        <div class="flex__item flex__item--right"></div>
+        <img class="pokemon__img" src="https://s2250677.edinburgh.domains/DWDWebsite1/images/streetpavers.jpg" />
+    </div>
+    <div class="flex__container flex--dialga animate--start" data-slide="4">
+        <div class="flex__item flex__item--left">
+            <div class="flex__content">
+                <p class="text--sub">Credits to the Artists...</p>
+                <h1 class="text--big">Artists</h1>
+                <p class="text--normal">The most famous cubist artist is Pablo Picasso, an Italian painter from the early 20th century. Other famous cubist artists include Cezanne, Miro, Kahlo, and Dali. Each artist has their own distinct style. Please edit this, I just made it up to fill space.  </p>
+            </div>
+            <!--<p class="text__background">Artists</p>-->
+        </div>
+        <div class="flex__item flex__item--right"></div>
+        <img class="pokemon__img" src="https://s2250677.edinburgh.domains/DWDWebsite1/images/marcoussis2.jpg" />
+    </div>
+    <div class="flex__container flex--zekrom animate--start" data-slide="5">
+        <div class="flex__item flex__item--left">
+            <div class="flex__content">
+                <p class="text--sub">For the Curious Viewers...</p>
+                <h1 class="text--big">Explore</h1>
+                <p class="text--normal"> Check out the art of some of these famous painters in the gallery below! Click on each painting for more information. </p>
+            </div>
+            <!--<p class="text__background">Explore</p>-->
+        </div>
+        <div class="flex__item flex__item--right"></div>
+        <img class="pokemon__img" src="https://s2250677.edinburgh.domains/DWDWebsite1/images/marcoussis.jpeg" />
+    </div>
+</div>
+
+<div class="slider__navi">
+    <a href="#" class="slide-nav active" data-slide="1">pikachu</a>
+    <a href="#" class="slide-nav" data-slide="2">piplup</a>
+    <a href="#" class="slide-nav" data-slide="3">blaziken</a>
+    <a href="#" class="slide-nav" data-slide="4">dialga</a>
+    <a href="#" class="slide-nav" data-slide="5">zekrom</a>
+</div>
+
+<div class = "galleryArray">
+        <h2> Gallery </h2>
+
+    <div class="grid">
+        <div class="grid-sizer"></div>
+        <div class="grid-item">
+            <img src="https://s2250677.edinburgh.domains/DWDWebsite1/images/gueridon.jpg" />
+            <div class="overlay">
+                <h3 class="artName">Grande nature morte au gueridon </h3>
+                <br><br>
+                <p class="artDesc">Pablo Picasso </p>
+                <p class="artDate">(c. 1931) </p>
+            </div>
+        </div>
+        <div class="grid-item">
+            <img src="https://s2250677.edinburgh.domains/DWDWebsite1/images/fresnaye.jpg" />
+            <div class="overlay">
+                <div class="text">Hello World</div>
+            </div>
+        </div>
+        <div class="grid-item">
+            <img src="https://s2250677.edinburgh.domains/DWDWebsite1/images/picassoportrait.jpg" />
+            <div class="overlay">
+                <div class="text">Hello World</div>
+            </div>
+        </div>
+        <div class="grid-item">
+            <img src="https://s2250677.edinburgh.domains/DWDWebsite1/images/lady.jpg" />
+        </div>
+        <div class="grid-item">
+            <img src="https://s2250677.edinburgh.domains/DWDWebsite1/images/cezanne.jpeg"  />
+        </div>
+        <div class="grid-item">
+            <img src="https://s2250677.edinburgh.domains/DWDWebsite1/images/streetpavers.jpg" />
+        </div>
+        <div class="grid-item">
+            <img src="https://s2250677.edinburgh.domains/DWDWebsite1/images/marcoussis2.jpg"/>
+        </div>
+        <div class="grid-item">
+            <img src="https://s2250677.edinburgh.domains/DWDWebsite1/images/marcoussis.jpeg"/>
+        </div>
+        <div class="grid-item">
+            <img src="https://s2250677.edinburgh.domains/DWDWebsite1/images/segal.jpeg" />
+        </div>
+        <div class="grid-item">
+            <img src="https://s2250677.edinburgh.domains/DWDWebsite1/images/hartley.jpg"/>
+        </div>
+        <div class="grid-item">
+            <img src="https://s2250677.edinburgh.domains/DWDWebsite1/images/BelinUpdate.jpg" />
+        </div>
+        <div class="grid-item">
+            <img src="https://s2250677.edinburgh.domains/DWDWebsite1/images/metzinger.jpg"/>
+        </div>
+
+    </div>
+
+
+
+</div>
+
+
+<script type = "text/javascript">
+    // external js: isotope.pkgd.js, imagesloaded.pkgd.js
+
+    // init Isotope after all images have loaded
+    const $grid = $('.grid').imagesLoaded(function () {
+        $grid.isotope({
+            itemSelector: '.grid-item',
+            percentPosition: true,
+            masonry: {
+                columnWidth: '.grid-sizer'
+            }
+        });
+    });
+
+    $('.slide-nav').on('click', function(e) {
+        e.preventDefault();
+        // get current slide
+        var current = $('.flex--active').data('slide'),
+            // get button data-slide
+            next = $(this).data('slide');
+
+        $('.slide-nav').removeClass('active');
+        $(this).addClass('active');
+
+        if (current === next) {
+            return false;
+        } else {
+            $('.slider__wrapper').find('.flex__container[data-slide=' + next + ']').addClass('flex--preStart');
+            $('.flex--active').addClass('animate--end');
+            setTimeout(function() {
+                $('.flex--preStart').removeClass('animate--start flex--preStart').addClass('flex--active');
+                $('.animate--end').addClass('animate--start').removeClass('animate--end flex--active');
+            }, 800);
+        }
+    });
+
+
+</script>
+</body>
+</html>

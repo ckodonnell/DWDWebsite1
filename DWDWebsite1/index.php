@@ -18,6 +18,29 @@ $f3->set('DB', $db);
 
 $f3->set('DEBUG',3);		// set maximum debug level
 $f3->set('UI','ui/');		// folder for View templates
+header('Access-Control-Allow-Origin: http://s2250677.edinburgh.domains/DWDWebsite1/');
+
+/**
+ * CORS
+ */
+// Allow from any origin
+if (isset($_SERVER['HTTP_ORIGIN'])) {
+    // header("Access-Control-Allow-Origin: {$_SERVER['HTTP_ORIGIN']}");
+    header("Access-Control-Allow-Origin: *");
+    header('Access-Control-Allow-Credentials: true');
+    header('Access-Control-Max-Age: 86400');    // cache for 1 day
+}
+// Access-Control headers are received during OPTIONS requests
+if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
+
+    if (isset($_SERVER['HTTP_ACCESS_CONTROL_REQUEST_METHOD'])) {
+        header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
+    }
+    if (isset($_SERVER['HTTP_ACCESS_CONTROL_REQUEST_HEADERS'])) {
+        header("Access-Control-Allow-Headers: {$_SERVER['HTTP_ACCESS_CONTROL_REQUEST_HEADERS']}");
+    }
+}
+
 //==============================================================================
 // Simple Example URL application routings
 
@@ -26,7 +49,7 @@ $f3->set('UI','ui/');		// folder for View templates
 $f3->route('GET /',
     function ($f3)
     {
-        $f3->set('html_title','Simple Example Home');
+        $f3->set('html_title','Cubism');
         $f3->set('content','simpleHome.html');
         echo template::instance()->render('layout.html');
     }
@@ -146,6 +169,7 @@ $f3->route('GET /style-transfer',
     {
         $f3->set('html_title','Style Transfer');
         $f3->set('content','styletransfer.html');
+        $f3->set('mode', 'no-cors');
         echo template::instance()->render('layout.html');
     }
 );
@@ -158,6 +182,42 @@ $f3->route('GET /canvas',
         echo template::instance()->render('layout.html');
     }
 );
+
+$f3->route('GET /learn',
+    function ($f3)
+    {
+        $f3->set('html_title','Learn');
+        $f3->set('content','cubismGallery.html');
+        echo template::instance()->render('layout.html');
+    }
+);
+
+$f3->route('GET /canvasDraw',
+    function ($f3)
+    {
+        $f3->set('html_title','CanvasDraw');
+        $f3->set('content','canvasDraw.html');
+        echo template::instance()->render('layout.html');
+    }
+);
+
+$f3->route('POST /canvasDraw',
+    function($f3)
+    {
+        $formdata = array();			// array to pass on the entered data in
+        $formdata["ArtworkName"] = $f3->get('POST.artName');			// whatever was called "name" on the form
+        $formdata["Name"] = $f3->get('POST.yourName');		// whatever was called "colour" on the form
+        $formdata["ArtworkURL"] = $f3->get('POST.artURL');		// whatever was called "artURL" on the form
+        $controller = new SimpleController('UserUploads');
+        $controller->putIntoDatabase($formdata);
+
+        $f3->set('formData',$formdata);		// set info in F3 variable for access in response template
+        $f3->set('html_title','CanvasDraw');
+        $f3->set('content','uploadComplete.html');
+        echo template::instance()->render('layout.html');
+    }
+);
+
 
 
 //==============================================================================

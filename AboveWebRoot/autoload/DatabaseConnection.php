@@ -4,9 +4,9 @@ class DatabaseConnection {
 
     static function connect() {
         return new DB\SQL(
-            'mysql:host=localhost;port=3306;dbname=GalleryData',
-            'sedin110_s2250677',
-            'cklodonnell2001!'
+            'mysql:host=localhost;port=3306;dbname=sedin110_GalleryData',
+            'sedin110_user2',
+            'pEDK9!GK,ZCQ'
         );
     }
 

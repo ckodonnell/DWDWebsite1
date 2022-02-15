@@ -23,7 +23,6 @@
             text-align: right;
             background: url('https://s2250677.edinburgh.domains/DWDWebsite1/images/bg5.png') no-repeat;
             background-size: 100%;
-            box-shadow: 0 6px 12px 0 rgba(124, 124, 124, 0.5);
         }
 
         .child{
@@ -46,33 +45,36 @@
         .canvDescription{
             font-family: "Rammetto One", sans-serif;
             color: #262626;
-            font-size: 18px;
+            font-size: 22px;
             text-align: right;
             position: absolute;
-            right: 245px;
+            right: 250px;
         }
 
 
         iframe{
             /*box-shadow: 5px 5px 5px #888; */
             position: absolute;
-            padding: 70px;
+            padding: 0px;
             border: 0px;
-            right: 100px;
+            top: 80px;
+            right: 160px;
+            width: 38%;
+            height: 77%;
         }
 
         .ExamplePaintingGallery{
-            background-color: #f67157;
+            background-color: #e86349;
             padding: 40px;
             font-family: "Rammetto One", sans-serif;
             position: absolute;
             left: 0px;
-            top: 710px;
+            top: 709px;
             display: table-cell;
         }
 
         .gallery{
-            background-color: #f67157;
+            background-color: #e86349;
             display: flex;
             padding: 20px;
             margin: 60px;
@@ -92,6 +94,7 @@
 <nav>
     <ul>
         <li><a href="{{ @BASE }}/"> Home </a></li>
+        <li><a href="{{ @BASE }}/learn"> Learn </a></li>
         <li><a href="{{ @BASE }}/style-transfer"> Style Transfer</a></li>
         <li><a href="{{ @BASE }}/canvas">Canvas</a></li>
     </ul>
@@ -103,7 +106,7 @@
     <h1 class = "canvDescription">Make your own cubist portrait!</h1>
 
     <div class ='child'>
-        <iframe src="https://s2250677.edinburgh.domains/DWDWebsite1/ui/canvasDraw.html" width=500 height=500 loading="lazy" allowfullscreen=""></iframe>
+        <iframe src="https://s2250677.edinburgh.domains/DWDWebsite1/canvasDraw" loading="lazy" allowfullscreen=""></iframe>
     </div>
 
     <div class ='child2'>

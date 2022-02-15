@@ -1,7 +1,6 @@
 /* css for entire site */
 
 html, body{
-    padding: 75px;
     background-color: #1c1c1c;
     width:100%;
     max-width:100%;
@@ -15,4 +14,8 @@ section {
 body section{
     display:table;
     width:100%;
+}
+
+* {
+    box-sizing: border-box;
 }

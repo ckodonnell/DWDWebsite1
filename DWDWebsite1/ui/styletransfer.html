@@ -50,6 +50,7 @@
     <nav>
         <ul>
             <li><a href="{{ @BASE }}/"> Home </a></li>
+            <li><a href="{{ @BASE }}/learn"> Learn </a></li>
             <li><a href="{{ @BASE }}/style-transfer"> Style Transfer</a></li>
             <li><a href="{{ @BASE }}/canvas">Canvas</a></li>
         </ul>
@@ -202,7 +203,11 @@
     let result = fastStyleTransferModel.execute([imageTensor, styleImageTensor]);
     let canvas = document.getElementById("stylizedImage");
 
-    tf.browser.toPixels( tf.squeeze(result), canvas);
+      tf.engine().startScope()
+      tf.browser.toPixels( tf.squeeze(result), canvas);
+      tf.tidy();
+      tf.engine().endScope()
+
   }
 
   function preprocess(imageData) {

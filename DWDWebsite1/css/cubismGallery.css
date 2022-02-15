@@ -1,0 +1,108 @@
+* { box-sizing: border-box; }
+
+/* force scrollbar */
+html { overflow-y: scroll; }
+
+body {
+    font-family: sans-serif;
+}
+
+/* ---- isotope ---- */
+
+.grid {
+    background: #e86349;
+}
+
+/* clear fix */
+.grid:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+/* ---- .grid-item ---- */
+
+.grid-sizer,
+.grid-item {
+    width: 20%;
+}
+
+.grid-item {
+    float: left;
+}
+
+.grid-item img {
+    display: block;
+    max-width: 100%;
+    padding: 10px
+}
+
+.grid-item img:hover{
+    cursor:pointer;
+}
+
+.overlay {
+    position: absolute;
+    top: 25%;
+    bottom: 0;
+    left: 25%;
+    right: 0;
+    height: 60%;
+    width: 60%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #f3e0d3;
+}
+
+.grid-item:hover .overlay {
+    opacity: 1;
+    /*transform:scale(1.05);
+    transition:transform 0.35s;
+    cursor:pointer;*/
+}
+
+
+.artName {
+    color: #1f1f1f;
+    font-size: 18px;
+    position: relative;
+    top: 25%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+    opacity:1;
+    max-width: 98%;
+    font-family: Tahoma, Arial, sans-serif;
+}
+
+.artDesc {
+    color: #3a3a3a;
+    font-size: 16px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+    opacity:1;
+    max-width: 98%;
+    font-family: Tahoma, Arial, sans-serif;
+}
+
+.artDate {
+    color: #3a3a3a;
+    font-size: 16px;
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+    opacity:1;
+    max-width: 98%;
+    font-family: Tahoma, Arial, sans-serif;
+}
