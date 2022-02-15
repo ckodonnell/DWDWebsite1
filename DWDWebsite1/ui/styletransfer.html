@@ -7,27 +7,44 @@
 <head>
     <meta charset=utf-8 />
     <title></title>
+
+    <link rel="stylesheet" href="https://s2250677.edinburgh.domains/DWDWebsite1/css/site.css">
     <link rel="stylesheet" href="https://s2250677.edinburgh.domains/DWDWebsite1/css/navBar.css">
+    <link rel="stylesheet" href="https://s2250677.edinburgh.domains/DWDWebsite1/css/canvasHelp.css">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Rammetto+One" />
 
     <style>
-        body{
-            padding: 75px;
+        .transfer-section{
+            position: absolute;
+            height:90%;
+            top: 70px;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            padding: 0px;
+            text-align: right;
+            background-color: #ec7979;
+            background-size: 100%;
+            font-family: Tahoma, Arial, sans-serif
         }
 
         h1 {
             text-align: center;
-            font-family: Tahoma, Arial, sans-serif;
-            color: #a853ce;
+            /*font-family: Tahoma, Arial, sans-serif;*/
+            color: #fffaf3;
             margin: 30px 0;
+            font-family: "Rammetto One", sans-serif;
         }
 
         div.container {
             display:inline-block;
+            padding:20px;
+            text-align: right;
         }
 
         label {
             text-align:center;
+            font-weight: bold;
         }
 
         canvas {
@@ -41,6 +58,23 @@
         select {
             text-align:center;
         }
+
+        .transfer-function{
+            position: absolute;
+            left: 10px;
+        }
+
+        .info{
+            display: block;
+            right: 30px;
+            top: 650px;
+            position: absolute;
+            height: 30px;
+            width: 120px;
+            padding:10px;
+            z-index: 100;
+        }
+
     </style>
 </head>
 
@@ -58,44 +92,70 @@
 </div>
 
 <!-- style transfer -->
-<h1> Enter an image and see it transformed into a cubist style! </h1>
-<div class="container">
-    <label>Choose an image to apply styles to:</label>
-    <p></p>
-    <canvas id="image" url="/image.jpeg" width="348" height="348"></canvas>
-    <p></p>
-    <input type="file"
-           id="changeImage" name="changeImage"
-           accept="image/png, image/jpeg" imgid="image" >
+<div class = "transfer-section">
+    <h1> Enter an image and see it transformed into a cubist style! </h1>
+    <div class = "transfer-function" >
+        <div class="container">
+            <label>Choose an image to apply styles to:</label>
+            <p></p>
+            <canvas id="image" url="/image.jpeg" width="348" height="348"></canvas>
+            <p></p>
+            <input type="file"
+                   id="changeImage" name="changeImage"
+                   accept="image/png, image/jpeg" imgid="image" >
+        </div>
+
+        <div class="container">
+            <label>Choose the style image:</label>
+            <p></p>
+            <canvas id="styleImage"  url="/style_transfer_image.jpeg"  width="348" height="348"></canvas>
+            <p></p>
+            <!-- <input type="file"
+                   id="changeStyleImage" name="changeImage"
+                   accept="image/png, image/jpeg" imgid="styleImage" > -->
+
+            <select id = "changeStyleImage" name = "changeImage" class="centered custom-select" >
+                <option value="disabled"> Select style image </option>
+                <option value="belin" > Belin </option>
+                <option value="gueridon"> Gueridon </option>
+                <option value="lady"> Lady </option>
+                <option value="portrait"> Portrait </option>
+            </select>
+
+        </div>
+
+        <div class="container">
+            <label>See the style transfer!</label>
+            <p></p>
+            <canvas id="stylizedImage" width="348" height="348"></canvas>
+            <p></p>
+            <button type="button" name="doStyleTransfer" onclick="doStyleTransfer()">Apply Style Transfer</button>
+        </div>
+
+    </div>
 </div>
 
-<div class="container">
-    <label>Choose the style image:</label>
-    <p></p>
-    <canvas id="styleImage"  url="/style_transfer_image.jpeg"  width="348" height="348"></canvas>
-    <p></p>
-    <!-- <input type="file"
-           id="changeStyleImage" name="changeImage"
-           accept="image/png, image/jpeg" imgid="styleImage" > -->
-
-    <select id = "changeStyleImage" name = "changeImage" class="centered custom-select" >
-        <option value="disabled"> Select style image </option>
-        <option value="belin"> Belin </option>
-        <option value="gueridon"> Gueridon </option>
-        <option value="lady"> Lady </option>
-        <option value="portrait"> Portrait </option>
-    </select>
-
+<div class ='info'>
+    <a class="button" href="#popup1">More Info</a>
 </div>
 
-<div class="container">
-    <label>See the style transfer!</label>
-    <p></p>
-    <canvas id="stylizedImage" width="348" height="348"></canvas>
-    <p></p>
-    <button type="button" name="doStyleTransfer" onclick="doStyleTransfer()">Apply Style Transfer</button>
+<div id="popup1" class="overlay">
+    <div class="popup">
+        <h2>What's going on here?</h2>
+        <a class="close" href="#">&times;</a>
+        <div class="content">
+            <p>
+                This is an AI-generated style transfer developed by Tensorflow. It takes in your image as input, and then does some AI magic to transform the colors and shapes into those of the style image.
+            </p>
+            <p>
+                Neither the image you provide nor the generated output are stored or saved anywhere on this website.
+            </p>
+            <p style="font-weight: bold">
+                NOTE: AI is not easy! It may take a while to generate an image (1-4 minutes). This feature works best on Safari and Chrome.
+            </p>
+        </div>
+    </div>
 </div>
-
 
 </body>
 </html>

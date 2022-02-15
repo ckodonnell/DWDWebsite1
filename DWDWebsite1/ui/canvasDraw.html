@@ -105,7 +105,7 @@
         Your Name:<br>
         <input id = "yourName" type="text" name="yourName">
         <br><br>
-        <input id = "artURL" type="hidden" name="artURL" readonly>
+        <input id = "artURL" type="hidden" name="artURL" value = "holder">
         <input id = "submit" type="submit" value="Submit">
     </form>
 </div>
@@ -381,7 +381,7 @@
     $('#upload').on('click', function () {
         $('.hideform').show();
         $(this).hide();
-        document.getElementById('delete-button').value = stage.toDataURL({ pixelRatio: 3 });
+        document.getElementById('artURL').value = stage.toDataURL({ pixelRatio: 1 });
     })
 
     $('#close').on('click', function () {
