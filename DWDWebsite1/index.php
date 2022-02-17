@@ -218,6 +218,18 @@ $f3->route('POST /canvasDraw',
     }
 );
 
+$f3->route('GET /userGallery',
+    function($f3)
+    {
+        $controller = new SimpleController('UserUploads');
+        $alldata = $controller->getData();
+
+        $f3->set("dbData", $alldata);
+        $f3->set('html_title','User Gallery');
+        $f3->set('content','userGallery.html');
+        echo template::instance()->render('layout.html');
+    }
+);
 
 
 //==============================================================================

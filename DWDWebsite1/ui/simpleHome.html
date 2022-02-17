@@ -6,7 +6,7 @@ use for collecting data.
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cubism Home</title>
 
     <link rel="stylesheet" href="https://s2250677.edinburgh.domains/DWDWebsite1/css/site.css">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Rammetto+One" />
@@ -59,6 +59,19 @@ use for collecting data.
             from{background-position-x:0px;}
             to{background-position-x: -2761px;}
         }
+        .report{
+            color: #ecd8cb;
+            position:absolute;
+            bottom:10px;
+            right: 15px;
+            font-family: Tahoma, Arial, sans-serif;
+
+        }
+        .report:hover{
+            transition: 0.4s;
+            /* #747474 */
+            color: #e3a273;
+        }
     </style>
 </head>
 
@@ -70,6 +83,7 @@ use for collecting data.
         <li><a href="{{ @BASE }}/learn"> Learn </a></li>
         <li><a href="{{ @BASE }}/style-transfer"> Style Transfer</a></li>
         <li><a href="{{ @BASE }}/canvas">Canvas</a></li>
+        <li><a href="{{ @BASE }}/userGallery">Community</a></li>
     </ul>
 </nav>
 
@@ -88,6 +102,7 @@ use for collecting data.
     </div>
 </div>
 
+<a class = "report" href="{{ @BASE }}/CYOUbismreport">REPORT</a>
 
 </body>
 </html>
