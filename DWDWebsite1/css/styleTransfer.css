@@ -1,0 +1,38 @@
+div.container {
+    display:inline-block;
+    padding:20px;
+    text-align: right;
+}
+
+label {
+    text-align:center;
+    font-weight: bold;
+}
+
+canvas {
+    text-align:center;
+}
+
+input {
+    text-align:center;
+}
+
+select {
+    text-align:center;
+}
+
+.transfer-function{
+    position: absolute;
+    left: 10px;
+}
+
+.info{
+    display: block;
+    right: 30px;
+    top: 650px;
+    position: absolute;
+    height: 30px;
+    width: 120px;
+    padding:10px;
+    z-index: 100;
+}

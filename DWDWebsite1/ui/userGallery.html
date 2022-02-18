@@ -18,26 +18,27 @@
         }
 
         .galleryArray{
-            background-color: #e86349;
+            background-color: #f3e0d3;
             top: 70px;
             left: 0;
             bottom: 0;
             right: 0;
-            padding: 0px;
+            height:100%
+            padding: 6px;
             position: absolute;
             text-align: center;
             font-family: "Rammetto One", sans-serif;
 
         }
         .galleryArray h2{
-            color: #eee1d8;
-            background-color: #e86349;
+            color: #1c1c1c;
             text-align: center;
         }
 
         .grid {
             width: 90%;
             margin-left: 72px;
+            padding-top:20px;
         }
 
         .grid-item{
@@ -55,23 +56,21 @@
             border: 2px solid #131313;
         }
 
+        .logo{
+            position: absolute;
+            right: 15px;
+            max-height: 100%;
+            max-width: 100%;
+            height: 56px;
+            z-index: 1001;
+        }
     </style>
 </head>
 <body>
 
-<!--<table>
-    <tr>
-        <th>ArtName</th><th>Name</th><th>ArtURL</th>
-    </tr>
-    <repeat group="{{ @dbData }}" value="{{ @record }}">
-        <tr>
-            <td>{{ trim(@record.ArtName) }}</td>
-            <td>{{ trim(@record.Name) }}</td>
-            <td><<img src = "{{ trim(@record.ArtURL) }}"> </td>
-        </tr>
-    </repeat>
-</table> -->
+<a href="{{ @BASE }}/"><img class = "logo" src="{{ @BASE }}/images/Logo_v3.png" alt="logo"></a>
 
+<!-- navigation bar -->
 <div>
     <nav>
         <ul>

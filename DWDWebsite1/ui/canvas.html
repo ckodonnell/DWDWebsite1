@@ -156,11 +156,22 @@
             to   { opacity: 1; }
         }
 
+        .logo{
+            position: absolute;
+            right: 15px;
+            max-height: 100%;
+            max-width: 100%;
+            height: 56px;
+            z-index: 1001;
+        }
     </style>
 </head>
 
 <body>
 
+<a href="{{ @BASE }}/"><img class = "logo" src="{{ @BASE }}/images/Logo_v3.png" alt="logo"></a>
+
+<!-- navigation bar -->
 <div>
 <nav>
     <ul>
@@ -206,7 +217,9 @@
     </div>
 </div>
 </section>
+
 <!-- help menu popup-->
+<!-- from: https://codepen.io/imprakash/pen/GgNMXO -->
 
 <div id="popup1" class="overlay">
     <div class="popup">

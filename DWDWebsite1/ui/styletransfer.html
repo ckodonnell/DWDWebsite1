@@ -1,3 +1,6 @@
+<!-- Machine learning model imported from https://tfhub.dev/google/magenta/arbitrary-image-stylization-v1-256/2-->
+<!-- Implementation inspired by https://github.com/armindocachada/fast-style-transfer-tensorflowjs -->
+
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.12.0/dist/tf.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
@@ -10,6 +13,7 @@
 
     <link rel="stylesheet" href="https://s2250677.edinburgh.domains/DWDWebsite1/css/site.css">
     <link rel="stylesheet" href="https://s2250677.edinburgh.domains/DWDWebsite1/css/navBar.css">
+    <link rel="stylesheet" href="https://s2250677.edinburgh.domains/DWDWebsite1/css/styleTransfer.css">
     <link rel="stylesheet" href="https://s2250677.edinburgh.domains/DWDWebsite1/css/canvasHelp.css">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Rammetto+One" />
 
@@ -36,49 +40,33 @@
             font-family: "Rammetto One", sans-serif;
         }
 
-        div.container {
-            display:inline-block;
-            padding:20px;
-            text-align: right;
-        }
-
-        label {
-            text-align:center;
-            font-weight: bold;
-        }
-
-        canvas {
-            text-align:center;
-        }
-
         input {
-            text-align:center;
+            color: #1e1e1e;
+            font-family: Tahoma, Arial, sans-serif;
         }
 
         select {
-            text-align:center;
+            font-family: Tahoma, Arial, sans-serif;
         }
 
-        .transfer-function{
+        #apply{
+            font-family: Tahoma, Arial, sans-serif;
+        }
+
+        .logo{
             position: absolute;
-            left: 10px;
+            right: 15px;
+            max-height: 100%;
+            max-width: 100%;
+            height: 56px;
+            z-index: 1001;
         }
-
-        .info{
-            display: block;
-            right: 30px;
-            top: 650px;
-            position: absolute;
-            height: 30px;
-            width: 120px;
-            padding:10px;
-            z-index: 100;
-        }
-
     </style>
 </head>
 
 <body>
+<a href="{{ @BASE }}/"><img class = "logo" src="{{ @BASE }}/images/Logo_v3.png" alt="logo"></a>
+
 <!-- navigation bar -->
 <div>
     <nav>
@@ -130,7 +118,7 @@
             <p></p>
             <canvas id="stylizedImage" width="348" height="348"></canvas>
             <p></p>
-            <button type="button" name="doStyleTransfer" onclick="doStyleTransfer()">Apply Style Transfer</button>
+            <button type="button" id = "apply" name="doStyleTransfer" onclick="doStyleTransfer()">Apply Style Transfer</button>
         </div>
 
     </div>

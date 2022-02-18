@@ -17,5 +17,6 @@
     <orderEntry type="library" name="site" level="application" />
     <orderEntry type="library" name="slideshow" level="application" />
     <orderEntry type="library" name="basicLightbox" level="application" />
+    <orderEntry type="library" name="styleTransfer" level="application" />
   </component>
 </module>

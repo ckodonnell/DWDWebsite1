@@ -72,11 +72,23 @@ use for collecting data.
             /* #747474 */
             color: #e3a273;
         }
+
+        .logo{
+            position: absolute;
+            right: 15px;
+            max-height: 100%;
+            max-width: 100%;
+            height: 56px;
+            z-index: 1001;
+        }
     </style>
 </head>
 
 <body>
 
+<a href="{{ @BASE }}/"><img class = "logo" src="{{ @BASE }}/images/Logo_v3.png" alt="logo"></a>
+
+<!-- navigation bar -->
 <nav>
     <ul>
         <li><a href="{{ @BASE }}/"> Home </a></li>
@@ -92,9 +104,9 @@ use for collecting data.
 
 <div class = "banner">
     <div class = "description">
-        <h1> WEBSITE TITLE</h1>
-        <p> It's all about YOU! This website is dedicated to teaching curious readers of all ages about the art movement Cubism.
-            Learn, create, and explore with us through activities like an AI-generated Style Transfer tool and a kid-friendly drawing canvas.
+        <h1> It's all about YOU! </h1>
+        <p> Cubism is all about finding new modes of expression. So what better place to find your new favorite look or style than right here?
+            Learn, create, and explore with us through hands-on activities like an AI-generated Style Transfer tool and a kid-friendly drawing canvas.
         </p>
         <p>
             Feeling particularly adventurous? Upload your art to our gallery to be featured alongside hundreds of other aspiring Cubist artists!
@@ -102,7 +114,7 @@ use for collecting data.
     </div>
 </div>
 
-<a class = "report" href="{{ @BASE }}/CYOUbismreport">REPORT</a>
+<a class = "report" href="{{ @BASE }}/assets/CYOUbismAlphaReport.pdf">REPORT</a>
 
 </body>
 </html>
