@@ -18,7 +18,7 @@ $f3->set('DB', $db);
 
 $f3->set('DEBUG',3);		// set maximum debug level
 $f3->set('UI','ui/');		// folder for View templates
-header('Access-Control-Allow-Origin: http://s2250677.edinburgh.domains/DWDWebsite1/');
+header('Access-Control-Allow-Origin: http://s2250677.edinburgh.domains/DWDWebsite2/');
 
 /**
  * CORS

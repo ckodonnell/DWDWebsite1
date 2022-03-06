@@ -11,10 +11,10 @@
     <meta charset=utf-8 />
     <title>Style Transfer</title>
 
-    <link rel="stylesheet" href="https://s2250677.edinburgh.domains/DWDWebsite1/css/site.css">
-    <link rel="stylesheet" href="https://s2250677.edinburgh.domains/DWDWebsite1/css/navBar.css">
-    <link rel="stylesheet" href="https://s2250677.edinburgh.domains/DWDWebsite1/css/styleTransfer.css">
-    <link rel="stylesheet" href="https://s2250677.edinburgh.domains/DWDWebsite1/css/canvasHelp.css">
+    <link rel="stylesheet" href="https://s2250677.edinburgh.domains/DWDWebsite2/css/site.css">
+    <link rel="stylesheet" href="https://s2250677.edinburgh.domains/DWDWebsite2/css/navBar.css">
+    <link rel="stylesheet" href="https://s2250677.edinburgh.domains/DWDWebsite2/css/styleTransfer.css">
+    <link rel="stylesheet" href="https://s2250677.edinburgh.domains/DWDWebsite2/css/canvasHelp.css">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Rammetto+One" />
 
     <style>
@@ -185,16 +185,16 @@
         const option = new Image();
 
         if (artSelected === "cat"){
-            option.src = 'https://s2250677.edinburgh.domains/DWDWebsite1/images/cat.jpg';
+            option.src = 'https://s2250677.edinburgh.domains/DWDWebsite2/images/cat.jpg';
         }
         else if (artSelected === "gueridon"){
-            option.src = 'https://s2250677.edinburgh.domains/DWDWebsite1/images/gueridon.jpg';
+            option.src = 'https://s2250677.edinburgh.domains/DWDWebsite2/images/gueridon.jpg';
         }
         else if (artSelected === "lady"){
-            option.src = 'https://s2250677.edinburgh.domains/DWDWebsite1/images/Niemann.jpg';
+            option.src = 'https://s2250677.edinburgh.domains/DWDWebsite2/images/Niemann.jpg';
         }
         else if (artSelected === "portrait"){
-            option.src = 'https://s2250677.edinburgh.domains/DWDWebsite1/images/picassoportrait.jpg';
+            option.src = 'https://s2250677.edinburgh.domains/DWDWebsite2/images/picassoportrait.jpg';
         }
 
         console.log("here1 is called");
@@ -229,7 +229,7 @@
   }
 
   async function loadModel() {
-      return tf.loadGraphModel('https://s2250677.edinburgh.domains/DWDWebsite1/modelfiles/model.json');
+      return tf.loadGraphModel('https://s2250677.edinburgh.domains/DWDWebsite2/modelfiles/model.json');
   }
 
   async function doStyleTransfer() {
