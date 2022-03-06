@@ -11,19 +11,24 @@
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Rammetto+One" />
 
     <style>
+        .canvasContainer{
+            background: white;
+            max-height: 100%;
+            height:90%;
+            top: 9.8vh;
+        }
+
         .styleSection{
-            position: absolute;
-            max-width: 100%;
+            background: white;
             max-height: 100%;
             height:90%;
             display: table-cell;
-            top: 70px;
+            top: 9.8vh;
             left: 0;
             bottom: 0;
             right: 0;
             padding: 0px;
             text-align: right;
-            background: url('https://s2250677.edinburgh.domains/DWDWebsite1/images/bg5.png') no-repeat;
             background-size: 100%;
             z-index: 0;
         }
@@ -34,24 +39,30 @@
 
         .child2{
             display: block;
-            right: 60px;
-            top: 525px;
+            right: 4vw;
+            top: 84.1vh;
             position: absolute;
-            height: 30px;
-            width: 60px;
+            height: 4.2vh;
+            width: 4vw;
             padding:10px
         }
 
         .paintingExample{
+            height: 400vh;
+            width: auto;
+            max-width: 38.5vw;
+            max-height: 77.8vh;
+            padding: 5px;
         }
 
         .canvDescription{
             font-family: "Rammetto One", sans-serif;
             color: #262626;
-            font-size: 22px;
+            font-size: 1.5vw;
             text-align: right;
             position: absolute;
-            right: 200px;
+            right: 15vw;
+            top: 10.2vh;
         }
 
 
@@ -60,21 +71,23 @@
             position: absolute;
             padding: 0px;
             border: 0px;
-            top: 80px;
-            right: 160px;
-            width: 35%;
-            height: 75%;
+            top: 20.2vh;
+            right: 11.1vw;
+            width: 34%;
+            height: 71%;
+            max-width: 40%;
+            max-height: 80%;
         }
 
         .ExamplePaintingGallery{
             background-color: #e86349;
             box-sizing: border-box;
             width: 100%;
-            padding: 40px;
             font-family: "Rammetto One", sans-serif;
             position: absolute;
             left: 0px;
-            top: 709px;
+            top: 99%;
+            height:100%;
             max-width: 100%;
             max-height: 100%;
             display: table-cell;
@@ -83,43 +96,41 @@
         .gallery{
             background-color: #e86349;
             display: flex;
-            padding: 20px;
-            margin: 60px;
+            width: 100%;
+            height: auto;
+            padding-left: 7vw;
             max-width: 100%;
             max-height: 100%;
         }
 
-        h2{
+        .exampleDesc{
             color: #eee1d8;
+            left: 5vw;
+            padding: 30px;
+            font-size: 1.6vw;
         }
 
-        #userExamples {
-            -webkit-animation: fadein 3s; /* Safari, Chrome and Opera > 12.1 */
-            -moz-animation: fadein 3s; /* Firefox < 16 */
-            animation: fadein 3s;
-            position: absolute;
-            height:90%;
-            max-width: 100%;
-            max-height: 100%;
-            top: 70px;
+        #mainBG{
+            top: 9.8vh;
+            height: 90%;
+            width: 100%;
             left: 0;
-            bottom: 0;
-            right: 0;
-            padding: 0px;
-            z-index: 100;
+            position: absolute;
+            background-color: white;
         }
 
         #shapes{
             -webkit-animation: fadein 3s; /* Safari, Chrome and Opera > 12.1 */
             -moz-animation: fadein 3s; /* Firefox < 16 */
             animation: fadein 3s;
-            top: 70px;
+            top: 9.8vh;
             padding: 0px;
+            left: 0;
             position: absolute;
-            height: auto;
+            height: 250vh;
             width: auto;
-            max-width: 250px;
-            max-height: 250px;
+            max-width: 17.3vw;
+            max-height: 35vh;
             transition-delay: 0.8s;
         }
 
@@ -127,28 +138,28 @@
             -webkit-animation: fadein 3s; /* Safari, Chrome and Opera > 12.1 */
             -moz-animation: fadein 3s; /* Firefox < 16 */
             animation: fadein 3s;
-            top: 70px;
-            left: 360px;
+            top: 9.8vh;
+            left: 25vw;
             padding: 0px;
             position: absolute;
-            height: auto;
+            height: 250vh;
             width: auto;
-            max-width: 250px;
-            max-height: 250px;
+            max-width: 17.3vh;
+            max-height: 35.0vh;
         }
 
         #sailboat{
             -webkit-animation: fadein 4s; /* Safari, Chrome and Opera > 12.1 */
             -moz-animation: fadein 4s; /* Firefox < 16 */
             animation: fadein 4s;
-            top: 70px;
-            left: 475px;
+            top: 9.8vh;
+            left: 33vw;
             padding: 0px;
             position: absolute;
-            height: auto;
+            height: 555vh;
             width: auto;
-            max-width: 555px;
-            max-height: 555px;
+            max-width: 38.5vw;
+            max-height: 77.8vh;
         }
 
         @keyframes fadein {
@@ -158,10 +169,10 @@
 
         .logo{
             position: absolute;
-            right: 15px;
+            right: 4vh;
             max-height: 100%;
             max-width: 100%;
-            height: 56px;
+            height: 7.5vh;
             z-index: 1001;
         }
     </style>
@@ -184,38 +195,40 @@
 </nav>
 </div>
 
-<section>
-<div class = "styleSection">
-    <h1 class = "canvDescription">Make your own cubist portrait!</h1>
+<section class = "canvasContainer">
+    <img src="https://s2250677.edinburgh.domains/DWDWebsite1/images/bg5.2.png" id = "mainBG">
+    <div class = "styleSection">
+        <h1 class = "canvDescription">Make your own cubist portrait!</h1>
 
-    <div class ='child'>
-        <iframe src="https://s2250677.edinburgh.domains/DWDWebsite1/canvasDraw" loading="lazy" allowfullscreen=""></iframe>
+        <div class ='child'>
+            <iframe src="https://s2250677.edinburgh.domains/DWDWebsite1/canvasDraw" loading="lazy" allowfullscreen=""></iframe>
+        </div>
+
+        <div class ='child2'>
+            <a class="button" href="#popup1">Help</a>
+        </div>
     </div>
-
-    <div class ='child2'>
-        <a class="button" href="#popup1">Help</a>
-    </div>
-
-</div>
 </section>
 
 <img src="https://s2250677.edinburgh.domains/DWDWebsite1/images/hangingShapes.png" id = "shapes">
 <img src="https://s2250677.edinburgh.domains/DWDWebsite1/images/hangingMonster.png" id = "monster">
 <img src="https://s2250677.edinburgh.domains/DWDWebsite1/images/hangingSailboat.png" id = "sailboat">
 
+
 <section class = 'ExamplePaintingGallery'>
-<h2> Check out these example paintings!</h2>
-<div class = "gallery">
-    <div class = "paintingExample">
-        <img src="https://s2250677.edinburgh.domains/DWDWebsite1/images/monster.png" alt="monster">
+    <h2 class = "exampleDesc"> Check out these example paintings!</h2>
+
+    <div class = "gallery">
+        <div class = "paintingExample">
+            <img src="https://s2250677.edinburgh.domains/DWDWebsite1/images/monster.png" alt="monster">
+        </div>
+        <div class = "paintingExample">
+            <img src="https://s2250677.edinburgh.domains/DWDWebsite1/images/shapes.png" alt="shapes">
+        </div>
+        <div class = "paintingExample">
+            <img src="https://s2250677.edinburgh.domains/DWDWebsite1/images/sailboat.png" alt="sailboat">
+        </div>
     </div>
-    <div class = "paintingExample">
-        <img src="https://s2250677.edinburgh.domains/DWDWebsite1/images/shapes.png" alt="shapes">
-    </div>
-    <div class = "paintingExample">
-        <img src="https://s2250677.edinburgh.domains/DWDWebsite1/images/sailboat.png" alt="sailboat">
-    </div>
-</div>
 </section>
 
 <!-- help menu popup-->

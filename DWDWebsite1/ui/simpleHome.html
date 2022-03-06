@@ -6,6 +6,7 @@ use for collecting data.
 <html lang="en">
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Cubism Home</title>
 
     <link rel="stylesheet" href="https://s2250677.edinburgh.domains/DWDWebsite1/css/site.css">
@@ -16,43 +17,52 @@ use for collecting data.
 
     <style>
         .banner{
-            background: url('https://s2250677.edinburgh.domains/DWDWebsite1/images/bg3.2.png') no-repeat;
+            background: rgb(255, 94, 81) no-repeat;
             position: fixed;
-            height:100%;
+            height: 100%;
             display: flex;
-            top: 70px;
+            top: 9.8vh;
             left: 0;
             bottom: 0;
             right: 0;
             padding: 0px;
-            background-size: 100%;
-
+            background-size: cover;
         }
         h1{
             font-family: "Rammetto One", sans-serif;
             color: #ecd8cb;
-            font-size: 50px;
+            font-size: 3.5vw;
         }
+
         .description{
             color: #ecd8cb;
             font-family: Tahoma, Arial, sans-serif;
             position: absolute;
-            font-size: 20px;
-            right: 245px;
-            top: 75px;
-            height: 600px;
-            width:600px;
+            font-size: 1.40vw;
+            right: 17.0vw;
+            top: 10.51vh;
+            height: 84.15vh;
+            width: 41.6vw;
         }
 
         .eyes{
-            top: 366px;
+            top: 51vh;
             width: 227px;
             height: 89px;
-            left: 48px;
+            left: 3.3vw;
             background-image: url('https://s2250677.edinburgh.domains/DWDWebsite1/images/eyes.png');
             animation: moveX 2s steps(12) infinite;
             z-index: 100;
             position:absolute;
+        }
+
+        .faces{
+            top: 9.8vh;
+            height: 90%;
+            width: 27%;
+            left: 0px;
+            z-index: 90;
+            position: absolute;
         }
 
         @keyframes moveX{
@@ -75,10 +85,10 @@ use for collecting data.
 
         .logo{
             position: absolute;
-            right: 15px;
+            right: 4vh;
             max-height: 100%;
             max-width: 100%;
-            height: 56px;
+            height: 7.5vh;
             z-index: 1001;
         }
     </style>
@@ -99,6 +109,7 @@ use for collecting data.
     </ul>
 </nav>
 
+<img class = "faces" src = "https://s2250677.edinburgh.domains/DWDWebsite1/images/faces.png"></img>
 <div class = "eyes"></div>
 
 
@@ -114,7 +125,7 @@ use for collecting data.
     </div>
 </div>
 
-<a class = "report" href="{{ @BASE }}/assets/CYOUbismAlphaReport.pdf">REPORT</a>
+<a class = "report" href="https://s2250677.edinburgh.domains/DWDWebsite1/assets/CYOubismAlphaReport1.pdf">REPORT</a>
 
 </body>
 </html>
