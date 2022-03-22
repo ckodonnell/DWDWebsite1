@@ -1,16 +1,20 @@
-<!-- 
-A very simple home page View template:
-just contains a link to the form that we will
-use for collecting data.
+<?php
+session_start();
+?>
+
+<!--
+Home page
  -->
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Cubism Home</title>
 
-    <link rel="stylesheet" href="https://s2250677.edinburgh.domains/DWDWebsite1/css/site.css">
+    <link rel="stylesheet" href="https://s2250677.edinburgh.domains/DWDWebsite2/css/site.css">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Rammetto+One" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"/>
 
     <link rel="stylesheet" href="./css/navBar.css">
     <title>{{@html_title}}</title>
@@ -18,7 +22,7 @@ use for collecting data.
     <style>
         .banner{
             background: rgb(255, 94, 81) no-repeat;
-            position: fixed;
+            position: absolute;
             height: 100%;
             display: flex;
             top: 9.8vh;
@@ -69,6 +73,7 @@ use for collecting data.
             from{background-position-x:0px;}
             to{background-position-x: -2761px;}
         }
+
         .report{
             color: #ecd8cb;
             position:absolute;
@@ -84,34 +89,66 @@ use for collecting data.
         }
 
         .logo{
-            position: absolute;
-            right: 4vh;
+            position: fixed;
+            left: 4vh;
             max-height: 100%;
             max-width: 100%;
             height: 7.5vh;
             z-index: 1001;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3px;
+            background-color: #1c1c1c;
+            color: #ecd8cb;
+            position:absolute;
+            bottom:0;
+            left: 0px;
+            top:100vh;
+            width:100%;
+            height:9.8vh;   /* Height of the footer */
+            font-family: Tahoma, Arial, sans-serif;
+            font-size: 1vw;
+        }
+
+        .icon{
+            position: fixed;
+            right: 4vh;
+            z-index: 1001;
+            top:2.8vh;
+        }
+
+        .fa-user:hover{
+
         }
     </style>
 </head>
 
 <body>
 
+<!-- navigation bar features -->
 <a href="{{ @BASE }}/"><img class = "logo" src="{{ @BASE }}/images/Logo_v3.png" alt="logo"></a>
+
+<a href= "{{ @BASE }}/login/loginform.html" class = "icon"> <i class="fas fa-user fa-2x" style="color:black"></i> </a>
 
 <!-- navigation bar -->
 <nav>
     <ul>
         <li><a href="{{ @BASE }}/"> Home </a></li>
         <li><a href="{{ @BASE }}/learn"> Learn </a></li>
-        <li><a href="{{ @BASE }}/style-transfer"> Style Transfer</a></li>
-        <li><a href="{{ @BASE }}/canvas">Canvas</a></li>
+        <li class="create"><a href="{{ @BASE }}/"> Create</a>
+            <ul class="dropdown">
+                <li class = "dditem"><a href="{{ @BASE }}/style-transfer"> Style Transfer</a></li>
+                <li class = "dditem"><a href="{{ @BASE }}/canvas">Canvas</a></li>
+            </ul>
+        </li>
         <li><a href="{{ @BASE }}/userGallery">Community</a></li>
     </ul>
 </nav>
 
-<img class = "faces" src = "https://s2250677.edinburgh.domains/DWDWebsite1/images/faces.png"></img>
+<img class="faces" src="https://s2250677.edinburgh.domains/DWDWebsite1/images/faces.png"/>
 <div class = "eyes"></div>
-
 
 <div class = "banner">
     <div class = "description">
@@ -122,10 +159,16 @@ use for collecting data.
         <p>
             Feeling particularly adventurous? Upload your art to our gallery to be featured alongside hundreds of other aspiring Cubist artists!
         </p>
+        <p> hello {{ @username }} </p>
     </div>
 </div>
 
 <a class = "report" href="https://s2250677.edinburgh.domains/DWDWebsite1/assets/CYOubismAlphaReport1.pdf">REPORT</a>
 
+<section>
+<footer>
+    <p>CYOUBism<br> Ciara, Paulo, and Kate</p>
+</footer>
+</section>
 </body>
 </html>

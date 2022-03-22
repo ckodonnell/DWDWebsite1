@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,10 +15,18 @@
     <link rel="stylesheet" href="https://s2250677.edinburgh.domains/DWDWebsite2/css/site.css">
     <link rel="stylesheet" href="https://s2250677.edinburgh.domains/DWDWebsite2/css/navBar.css">
     <link rel="stylesheet" href="https://s2250677.edinburgh.domains/DWDWebsite2/css/cubismGallery.css">
+    <link rel="stylesheet" href="https://s2250677.edinburgh.domains/DWDWebsite2/css/modal.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"/>
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Rammetto+One" />
     <style>
         h2{
             font-family: "Rammetto One", sans-serif;
+        }
+        .myImg{
+            transition: transform .2s; /* Animation */
+        }
+        .myImg:hover {
+            transform: scale(1.02);
         }
 
         .galleryArray{
@@ -22,7 +34,6 @@
             top: 9.8vh;
             left: 0;
             right: 0;
-            height:100%;
             padding: 6px;
             position: absolute;
             text-align: center;
@@ -38,6 +49,8 @@
             width: 90%;
             margin-left: 72px;
             padding-top:20px;
+            background-color: #f3e0d3;
+
         }
 
         .grid-item{
@@ -50,33 +63,45 @@
         }
 
         .grid-item img {
-            padding: 0px;
+            padding: 0;
             background: rgb(255, 255, 255);
-            border: 2px solid #131313;
+            border: 2px solid #2a2a2a;
         }
 
         .logo{
-            position: absolute;
-            right: 4vh;
+            position: fixed;
+            left: 4vh;
             max-height: 100%;
             max-width: 100%;
             height: 7.5vh;
             z-index: 1001;
+        }
+
+        .icon{
+            position: fixed;
+            right: 4vh;
+            z-index: 1001;
+            top:2.8vh;
         }
     </style>
 </head>
 <body>
 
 <a href="{{ @BASE }}/"><img class = "logo" src="{{ @BASE }}/images/Logo_v3.png" alt="logo"></a>
+<a href= "{{ @BASE }}/login/loginform.html" class = "icon"> <i class="fas fa-user fa-2x" style="color:black"></i> </a>
 
-<!-- navigation bar -->
 <div>
+    <!-- navigation bar -->
     <nav>
         <ul>
             <li><a href="{{ @BASE }}/"> Home </a></li>
             <li><a href="{{ @BASE }}/learn"> Learn </a></li>
-            <li><a href="{{ @BASE }}/style-transfer"> Style Transfer</a></li>
-            <li><a href="{{ @BASE }}/canvas">Canvas</a></li>
+            <li class="create"><a href="{{ @BASE }}/"> Create</a>
+                <ul class="dropdown">
+                    <li class = "dditem"><a href="{{ @BASE }}/style-transfer"> Style Transfer</a></li>
+                    <li class = "dditem"><a href="{{ @BASE }}/canvas">Canvas</a></li>
+                </ul>
+            </li>
             <li><a href="{{ @BASE }}/userGallery">Community</a></li>
         </ul>
     </nav>
@@ -88,19 +113,50 @@
         <div class="grid-sizer"></div>
         <repeat group="{{ @dbData }}" value="{{ @record }}">
             <div class="grid-item">
-                <img src = "{{ trim(@record.ArtURL) }}">
-                <div class="overlay">
+                <img class = "myImg" role="button" src = "{{ trim(@record.ArtURL) }}" alt = "{{ trim(@record.ArtName) }} --- {{ trim(@record.Name) }}" onclick = "showInfo(this)">
+                <!-- <div class="overlay">
                     <h3 class="artName">{{ trim(@record.ArtName) }}</h3>
                     <br>
                     <p class="artDesc">By: {{ trim(@record.Name) }} </p>
-                </div>
+                </div> -->
             </div>
         </repeat>
     </div>
 </div>
 </div>
 
+<!-- The Modal -->
+<div id="myModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="img01">
+    <div id="caption"></div>
+</div>
+
 <script type = "text/javascript">
+
+    //display modal
+    function showInfo(t) {
+        // Get the modal
+        const modal = document.getElementById("myModal");
+
+        // Get the image and insert it inside the modal - use its "alt" text as a caption
+        const img = document.getElementsByClassName("myImg");
+        const modalImg = document.getElementById("img01");
+        const captionText = document.getElementById("caption");
+        console.log("clicked");
+        modal.style.display = "block";
+        modalImg.src = t.src;
+        captionText.innerHTML = t.alt;
+
+        // Get the <span> element that closes the modal
+        const span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+    }
+
     // external js: isotope.pkgd.js, imagesloaded.pkgd.js
 
     // init Isotope after all images have loaded

@@ -6,6 +6,11 @@
 // These are available to the routing code below, but also to any
 // classes defined in autoloaded definitions
 
+//start session:
+
+session_start();
+
+
 $home = '/home/'.get_current_user();
 
 $f3 = require($home.'/AboveWebRoot/fatfree-master/lib/base.php');
@@ -19,6 +24,8 @@ $f3->set('DB', $db);
 $f3->set('DEBUG',3);		// set maximum debug level
 $f3->set('UI','ui/');		// folder for View templates
 header('Access-Control-Allow-Origin: http://s2250677.edinburgh.domains/DWDWebsite2/');
+
+$f3->set("username", $_SESSION["name"]);
 
 /**
  * CORS
@@ -225,6 +232,7 @@ $f3->route('GET /userGallery',
         $alldata = $controller->getData();
 
         $f3->set("dbData", $alldata);
+        $f3->set("username", $_SESSION["name"]);
         $f3->set('html_title','User Gallery');
         $f3->set('content','userGallery.html');
         echo template::instance()->render('layout.html');

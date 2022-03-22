@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="https://s2250677.edinburgh.domains/DWDWebsite2/css/navBar.css">
     <link rel="stylesheet" href="https://s2250677.edinburgh.domains/DWDWebsite2/css/styleTransfer.css">
     <link rel="stylesheet" href="https://s2250677.edinburgh.domains/DWDWebsite2/css/canvasHelp.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"/>
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Rammetto+One" />
 
     <style>
@@ -54,18 +55,27 @@
         }
 
         .logo{
-            position: absolute;
-            right: 4vh;
+            position: fixed;
+            left: 4vh;
             max-height: 100%;
             max-width: 100%;
             height: 7.5vh;
             z-index: 1001;
+        }
+
+        .icon{
+            position: fixed;
+            right: 4vh;
+            z-index: 1001;
+            top:2.8vh;
         }
     </style>
 </head>
 
 <body>
 <a href="{{ @BASE }}/"><img class = "logo" src="{{ @BASE }}/images/Logo_v3.png" alt="logo"></a>
+<a href= "{{ @BASE }}/login/loginform.html" class = "icon"> <i class="fas fa-user fa-2x" style="color:black"></i> </a>
+
 
 <!-- navigation bar -->
 <div>
@@ -73,8 +83,12 @@
         <ul>
             <li><a href="{{ @BASE }}/"> Home </a></li>
             <li><a href="{{ @BASE }}/learn"> Learn </a></li>
-            <li><a href="{{ @BASE }}/style-transfer"> Style Transfer</a></li>
-            <li><a href="{{ @BASE }}/canvas">Canvas</a></li>
+            <li class="create"><a href="{{ @BASE }}/"> Create</a>
+                <ul class="dropdown">
+                    <li class = "dditem"><a href="{{ @BASE }}/style-transfer"> Style Transfer</a></li>
+                    <li class = "dditem"><a href="{{ @BASE }}/canvas">Canvas</a></li>
+                </ul>
+            </li>
             <li><a href="{{ @BASE }}/userGallery">Community</a></li>
         </ul>
     </nav>
@@ -229,7 +243,7 @@
   }
 
   async function loadModel() {
-      return tf.loadGraphModel('https://s2250677.edinburgh.domains/DWDWebsite2/modelfiles/model.json');
+      return tf.loadGraphModel('https://s2250677.edinburgh.domains/DWDWebsite1/modelfiles/model.json');
   }
 
   async function doStyleTransfer() {

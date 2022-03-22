@@ -36,7 +36,9 @@ body {
 .grid-item img {
     display: block;
     max-width: 100%;
-    padding: 10px
+    padding: 10px;
+    border-radius: 6%;
+
 }
 
 .grid-item img:hover{
@@ -108,3 +110,4 @@ body {
     max-width: 98%;
     font-family: Tahoma, Arial, sans-serif;
 }
+

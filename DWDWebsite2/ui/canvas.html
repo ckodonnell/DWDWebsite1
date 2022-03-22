@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +12,7 @@
     <link rel="stylesheet" href="https://s2250677.edinburgh.domains/DWDWebsite2/css/site.css">
     <link rel="stylesheet" href="https://s2250677.edinburgh.domains/DWDWebsite2/css/navBar.css">
     <link rel="stylesheet" href="https://s2250677.edinburgh.domains/DWDWebsite2/css/canvasHelp.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"/>
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Rammetto+One" />
 
     <style>
@@ -80,7 +85,7 @@
         }
 
         .ExamplePaintingGallery{
-            background-color: #e86349;
+            background-color: white;
             box-sizing: border-box;
             width: 100%;
             font-family: "Rammetto One", sans-serif;
@@ -94,7 +99,7 @@
         }
 
         .gallery{
-            background-color: #e86349;
+            background-color: white;
             display: flex;
             width: 100%;
             height: auto;
@@ -104,10 +109,11 @@
         }
 
         .exampleDesc{
-            color: #eee1d8;
-            left: 5vw;
-            padding: 30px;
-            font-size: 1.6vw;
+            color: #e86349;
+            text-align: center;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            font-size: 2vw;
         }
 
         #mainBG{
@@ -168,12 +174,19 @@
         }
 
         .logo{
-            position: absolute;
-            right: 4vh;
+            position: fixed;
+            left: 4vh;
             max-height: 100%;
             max-width: 100%;
             height: 7.5vh;
             z-index: 1001;
+        }
+
+        .icon{
+            position: fixed;
+            right: 4vh;
+            z-index: 1001;
+            top:2.8vh;
         }
     </style>
 </head>
@@ -181,18 +194,24 @@
 <body>
 
 <a href="{{ @BASE }}/"><img class = "logo" src="{{ @BASE }}/images/Logo_v3.png" alt="logo"></a>
+<a href= "{{ @BASE }}/login/loginform.html" class = "icon"> <i class="fas fa-user fa-2x" style="color:black"></i> </a>
+
 
 <!-- navigation bar -->
 <div>
-<nav>
-    <ul>
-        <li><a href="{{ @BASE }}/"> Home </a></li>
-        <li><a href="{{ @BASE }}/learn"> Learn </a></li>
-        <li><a href="{{ @BASE }}/style-transfer"> Style Transfer</a></li>
-        <li><a href="{{ @BASE }}/canvas">Canvas</a></li>
-        <li><a href="{{ @BASE }}/userGallery">Community</a></li>
-    </ul>
-</nav>
+    <nav>
+        <ul>
+            <li><a href="{{ @BASE }}/"> Home </a></li>
+            <li><a href="{{ @BASE }}/learn"> Learn </a></li>
+            <li class="create"><a href="{{ @BASE }}/"> Create</a>
+                <ul class="dropdown">
+                    <li class = "dditem"><a href="{{ @BASE }}/style-transfer"> Style Transfer</a></li>
+                    <li class = "dditem"><a href="{{ @BASE }}/canvas">Canvas</a></li>
+                </ul>
+            </li>
+            <li><a href="{{ @BASE }}/userGallery">Community</a></li>
+        </ul>
+    </nav>
 </div>
 
 <section class = "canvasContainer">
