@@ -20,25 +20,25 @@ session_start();
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Rammetto+One" />
     <style>
         .galleryArray{
-            background-color: #e86349;
-            top: 74%;
-            left: 0;
+            background-color: #DBCEBA;
+            top: 78%;
+            right: 0vh;
             bottom: 0;
-            right: 0;
             padding: 0px;
             position: absolute;
             text-align: center;
             font-family: "Rammetto One", sans-serif;
+            width:100%;
 
         }
 
         .galleryArray h2{
-            color: #eee1d8;
+            color: #1c1c1c;
             font-size: 4vh;
         }
 
         .galleryArray h3{
-            color: #1e1e1e;
+            color: #DBCEBA;
             font-size:2.3vh;
         }
 
@@ -49,12 +49,17 @@ session_start();
             transform: scale(1.02);
         }
 
+        .info{
+            display:none;
+        }
+
         .logo{
             position: fixed;
-            left: 4vh;
+            left: 1.8vw;
+            top: 3.15vh;
             max-height: 100%;
             max-width: 100%;
-            height: 7.5vh;
+            height: 4.5vh;
             z-index: 1001;
         }
 
@@ -64,13 +69,12 @@ session_start();
             z-index: 1001;
             top:2.8vh;
         }
-
     </style>
 </head>
 <body>
 
-<a href="{{ @BASE }}/"><img class = "logo" src="{{ @BASE }}/images/Logo_v3.png" alt="logo"></a>
-<a href= "{{ @BASE }}/login/loginform.html" class = "icon"> <i class="fas fa-user fa-2x" style="color:black"></i> </a>
+<a href="{{ @BASE }}/"><img class = "logo" src="{{ @BASE }}/images/logov2white.png" alt="logo"></a>
+<a href= "{{ @BASE }}/login/loginform.html" class = "icon"> <i class="fas fa-user fa-2x" style="color:white"></i> </a>
 
 
 <!-- navigation bar -->
@@ -92,7 +96,7 @@ session_start();
 
 <!-- From: https://codepen.io/mikun/pen/YWgqEX */ -->
 <div class="slider__wrapper">
-    <div class="flex__container flex--pikachu flex--active" data-slide="1">
+    <div class="flex__container flex--zekrom flex--active" data-slide="1">
         <div class="flex__item flex__item--left">
             <div class="flex__content">
                 <p class="text--sub">Overview...</p>
@@ -102,7 +106,7 @@ session_start();
             <!--<p class="text__background">Cubism</p>-->
         </div>
         <div class="flex__item flex__item--right"></div>
-        <img class="pokemon__img" src="https://s2250677.edinburgh.domains/DWDWebsite2/images/fresnaye.jpg" />
+        <img class="pokemon__img" src="https://s2250677.edinburgh.domains/DWDWebsite2/images/marcoussis.jpeg" />
     </div>
     <div class="flex__container flex--piplup animate--start" data-slide="2">
         <div class="flex__item flex__item--left">
@@ -114,7 +118,7 @@ session_start();
             <!--<p class="text__background">Style</p> -->
         </div>
         <div class="flex__item flex__item--right"></div>
-        <img class="pokemon__img" src="https://s2250677.edinburgh.domains/DWDWebsite2/images/cezanne.jpeg" />
+        <img class="pokemon__img" src="https://s2250677.edinburgh.domains/DWDWebsite2/images/Niemann.jpg" />
     </div>
     <div class="flex__container flex--blaziken animate--start" data-slide="3">
 
@@ -139,9 +143,9 @@ session_start();
             <!--<p class="text__background">Artists</p>-->
         </div>
         <div class="flex__item flex__item--right"></div>
-        <img class="pokemon__img" src="https://s2250677.edinburgh.domains/DWDWebsite2/images/marcoussis2.jpg" />
+        <img class="pokemon__img" src="https://s2250677.edinburgh.domains/DWDWebsite2/images/cezanne.jpeg" />
     </div>
-    <div class="flex__container flex--zekrom animate--start" data-slide="5">
+    <div class="flex__container flex--pikachu animate--start" data-slide="5">
         <div class="flex__item flex__item--left">
             <div class="flex__content">
                 <p class="text--sub">For the Curious Viewers...</p>
@@ -151,7 +155,7 @@ session_start();
             <!--<p class="text__background">Explore</p>-->
         </div>
         <div class="flex__item flex__item--right"></div>
-        <img class="pokemon__img" src="https://s2250677.edinburgh.domains/DWDWebsite2/images/marcoussis.jpeg" />
+        <img class="pokemon__img" src="https://s2250677.edinburgh.domains/DWDWebsite2/images/segal.jpeg" />
     </div>
 </div>
 
@@ -164,50 +168,130 @@ session_start();
 </div>
 
 <!-- Styling made possible by https://isotope.metafizzy.co/ */ -->
-<div class = "galleryArray">
+<section class = "galleryArray">
     <h2> Gallery </h2>
+
+    <div class="button-group sort-by-button-group">
+        <button id = "first" class="button is-checked" data-sort-value="original-order">Default</button>
+        <button class="button" data-sort-value="artName">Artwork Name (A-Z)</button>
+        <button class="button" data-sort-value="artDesc">Artist Surname (A-Z)</button>
+        <button class="button" data-sort-value="artDate">Chronological</button>
+    </div>
+
     <div class="grid">
         <div class="grid-sizer"></div>
         <div class="grid-item">
             <img src="https://s2250677.edinburgh.domains/DWDWebsite2/images/gueridon.jpg" alt = "Grande nature morte au gueridon, Pablo Picasso (c. 1931)" class = "myImg" role="button" onclick = "showInfo(this)" />
+            <div class = "info">
+                <h3 class="artName">Grande</h3>
+                <p class="artDesc">Picasso </p>
+                <p class="artDate">1931 </p>
+            </div>
         </div>
         <div class="grid-item">
             <img src="https://s2250677.edinburgh.domains/DWDWebsite2/images/fresnaye.jpg" alt = "Sitting Man, Roger de La Fresnaye (c. 1914)" class = "myImg" role="button" onclick = "showInfo(this)"  />
+            <div class="info">
+                <h3 class="artName">Sitting</h3>
+                <br><br>
+                <p class="artDesc">De </p>
+                <p class="artDate">1914</p>
+            </div>
         </div>
         <div class="grid-item">
             <img src="https://s2250677.edinburgh.domains/DWDWebsite2/images/picassoportrait.jpg" alt = "Portrait of Pablo Picasso, Juan Gris (c. 1912)" class = "myImg" role="button" onclick = "showInfo(this)"/>
+            <div class="info">
+                <h3 class="artName">Portrait</h3>
+                <br><br>
+                <p class="artDesc">Gris</p>
+                <p class="artDate">1912</p>
+            </div>
         </div>
         <div class="grid-item">
             <img src="https://s2250677.edinburgh.domains/DWDWebsite2/images/Niemann.jpg" alt = "Tapestries of Desire, Hennie Niemann (c. 2019)" class = "myImg" role="button" onclick = "showInfo(this)" />
+            <div class="info">
+                <h3 class="artName">Tapestries</h3>
+                <br><br>
+                <p class="artDesc">Niemann</p>
+                <p class="artDate">2019</p>
+            </div>
         </div>
         <div class="grid-item">
             <img src="https://s2250677.edinburgh.domains/DWDWebsite2/images/cezanne.jpeg" alt = "The Gardener Vallier, Paul Cézanne (c. 1906)" class = "myImg" role="button" onclick = "showInfo(this)" />
+            <div class="info">
+                <h3 class="artName">Gardener</h3>
+                <br><br>
+                <p class="artDesc">Cézanne</p>
+                <p class="artDate">1906</p>
+            </div>
         </div>
         <div class="grid-item">
             <img src="https://s2250677.edinburgh.domains/DWDWebsite2/images/streetpavers.jpg" alt = "The Street Pavers, Umberto Boccioni (c. 1914)" class = "myImg" role="button" onclick = "showInfo(this)" />
+            <div class="info">
+                <h3 class="artName">Street</h3>
+                <p class="artDesc">Boccioni</p>
+                <p class="artDate">1914</p>
+            </div>
         </div>
         <div class="grid-item">
             <img src="https://s2250677.edinburgh.domains/DWDWebsite2/images/marcoussis2.jpg" alt = "Composition cubiste, poisson et clair de lune, Louis Marcoussis (c. 1926)" class = "myImg" role="button" onclick = "showInfo(this)"/>
+            <div class="info">
+                <h3 class="artName">Composition </h3>
+                <p class="artDesc">Marcoussis</p>
+                <p class="artDate">1926</p>
+            </div>
         </div>
         <div class="grid-item">
             <img src="https://s2250677.edinburgh.domains/DWDWebsite2/images/marcoussis.jpeg" alt = "Still Life, Louis Marcoussis (c. 1927)" class = "myImg" role="button" onclick = "showInfo(this)"/>
+            <div class="info">
+                <h3 class="artName">Still</h3>
+                <br>
+                <p class="artDesc">Marcoussis</p>
+                <br>
+                <p class="artDate">1927</p>
+            </div>
         </div>
         <div class="grid-item">
             <img src="https://s2250677.edinburgh.domains/DWDWebsite2/images/segal.jpeg" alt = "Hafen, La Ciotat, Arthur Segal (c. 1928)" class = "myImg" role="button" onclick = "showInfo(this)"/>
+            <div class="info">
+                <h3 class="artName">Hafen</h3>
+                <br>
+                <p class="artDesc">Segal</p>
+                <br>
+                <p class="artDate">1928</p>
+            </div>
         </div>
         <div class="grid-item">
             <img src="https://s2250677.edinburgh.domains/DWDWebsite2/images/hartley.jpg" alt = "Portrait of a German Officer, Marsden Hartley (c. 1914)" class = "myImg" role="button" onclick = "showInfo(this)" />
+            <div class="info">
+                <h3 class="artName">Portrait</h3>
+                <br>
+                <p class="artDesc">Hartley</p>
+                <p class="artDate">1914</p>
+            </div>
         </div>
         <div class="grid-item">
             <img src="https://s2250677.edinburgh.domains/DWDWebsite2/images/cat.jpg" alt = "Cassie Thinking About Cubism, Philip Absolon (c. 2008)" class = "myImg" role="button" onclick = "showInfo(this)"/>
+            <div class="info">
+                <h3 class="artName">Cassie</h3>
+                <br><br>
+                <p class="artDesc">Absolon</p>
+                <br><br>
+                <p class="artDate">2008</p>
+            </div>
         </div>
         <div class="grid-item">
             <img src="https://s2250677.edinburgh.domains/DWDWebsite2/images/metzinger.jpg" alt = "Fruit and a Jug on a Table, Jean Metzinger (c. 1916)" class = "myImg" role="button" onclick = "showInfo(this)"/>
+            <div class="info">
+                <h3 class="artName">Fruit</h3>
+                <br><br>
+                <p class="artDesc">Metzinger </p>
+                <p class="artDate">1916</p>
+            </div>
         </div>
 
     </div>
 
-</div>
+</section>
 
 <!-- The Modal -->
 <div id="myModal" class="modal">
@@ -226,11 +310,17 @@ session_start();
         $grid.isotope({
             itemSelector: '.grid-item',
             percentPosition: true,
+            layoutMode: 'masonry',
             masonry: {
                 columnWidth: '.grid-sizer'
-            }
+            },
+            getSortData: {
+                artName: '.artName',
+                artDesc: '.artDesc',
+                artDate: '.artDate parseInt'}
         });
     });
+
 
     /* From: https://codepen.io/mikun/pen/YWgqEX */
     $('.slide-nav').on('click', function(e) {
@@ -277,6 +367,24 @@ session_start();
             modal.style.display = "none";
         }
     }
+
+    // external js: isotope.pkgd.js
+
+    // bind sort button click
+    $('.sort-by-button-group').on( 'click', 'button', function() {
+        var sortValue = $(this).attr('data-sort-value');
+        $grid.isotope({ sortBy: sortValue });
+    });
+
+    // change is-checked class on buttons
+    $('.button-group').each( function( i, buttonGroup ) {
+        var $buttonGroup = $( buttonGroup );
+        $buttonGroup.on( 'click', 'button', function() {
+            $buttonGroup.find('.is-checked').removeClass('is-checked');
+            $( this ).addClass('is-checked');
+        });
+    });
+
 
 
 </script>

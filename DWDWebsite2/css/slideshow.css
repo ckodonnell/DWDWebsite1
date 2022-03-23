@@ -152,17 +152,17 @@
 /* Piplup */
 
 .flex--piplup .flex__item--left {
-    background: #3e9fe6;
+    background: #705b60;
 }
 
 .flex--piplup .flex__item--right {
-    background: #d3eaef;
+    background: #ccaeae;
 }
 
 /* Pikachu */
 
 .flex--pikachu .flex__item--left {
-    background: #f8d41f;
+    background: #d2b007;
 }
 
 .flex--pikachu .flex__item--right {
@@ -172,31 +172,31 @@
 /* Blaziken */
 
 .flex--blaziken .flex__item--left {
-    background: #f64f37;
+    background: #d76050;
 }
 
 .flex--blaziken .flex__item--right {
-    background: #ffebcd;
+    background: #f5e7d3;
 }
 
 /* Dialga */
 
 .flex--dialga .flex__item--left {
-    background: #476089;
+    background: #596372;
 }
 
 .flex--dialga .flex__item--right {
-    background: #ade8f7;
+    background: #9daabe;
 }
 
 /* Zekrom */
 
 .flex--zekrom .flex__item--left {
-    background: #424242;
+    background: #7e6d64;
 }
 
 .flex--zekrom .flex__item--right {
-    background: #a7bcbb;
+    background: #dccfc6;
 }
 
 .flex__content {

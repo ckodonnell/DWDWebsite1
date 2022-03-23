@@ -3,20 +3,19 @@
 nav{
     width: 100%;
     height: 9.8vh;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: #2f2f2f;
     position: fixed;
     top: 0px;
-    box-shadow: 0 3px 6px 0 rgba(124, 124, 124, 0.5);
+    box-shadow: 0 3px 6px 0 rgba(31, 31, 31, 0.5);
     z-index: 1000;
     right: 0px;
 }
-
 
 nav ul {
     width: 100%;
     height: 100%;
     display: flex;
-    padding-left: 13vw;
+    padding-left: 15vw;
     margin: 0;
 }
 
@@ -29,7 +28,7 @@ nav ul li {
 nav li a {
     /*display: inline-block;*/
     display: block;
-    color: #1f1f1f;
+    color: #ffffff;
     white-space: nowrap;
     padding: 2.94vh 2.94vh;
     text-align: center;
@@ -39,11 +38,11 @@ nav li a {
     text-decoration: none;
 }
 
-nav ul li:hover {
+nav ul li a:hover {
     transition: 0.4s;
-    background: #ffd446;
+    /*background: #ffd446;*/
     /* #747474 */
-    color: #9b812a;
+    color: #ffd446;
 }
 
 .create{
@@ -66,6 +65,7 @@ nav ul li:hover {
 
 .dditem{
     margin: 0;
+    border-bottom: 2px solid #5d5d5d;
 }
 
 .dditem a{
@@ -79,9 +79,13 @@ nav ul li:hover {
 
 }
 
+.icon:hover .dropdown {
+    display: block;
+
+}
+
 .dropdown li:hover{
     transition: 0.4s;
-    background: #767677;
     /* #747474 */
     color: #9b812a;
 }

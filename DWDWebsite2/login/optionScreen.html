@@ -1,0 +1,130 @@
+<?php
+session_start();
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Rammetto+One" />
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "segoe ui", roboto, oxygen, ubuntu, cantarell, "fira sans", "droid sans", "helvetica neue", Arial, sans-serif;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-family: Tahoma, Arial, sans-serif;
+        }
+        body {
+            background-color: #1c1c1c;
+            text-align: center;
+        }
+
+        .logo{
+            height: 10vh;
+            margin-top:13vh;
+            padding-left:3.85vw;
+        }
+
+        .options{
+            color:white;
+            text-align: center;
+            padding-top:50px;
+        }
+
+        .loginButton{
+            text-align: center;
+            width: 400px;
+            margin: 20px auto;
+            padding-top: 25px;
+        }
+
+        .loginButton p{
+            text-align: center;
+            color: white;
+        }
+
+        .loginButton button{
+            width: 100%;
+            height:100%;
+            padding: 15px;
+            margin-top: 5px;
+            background-color: #e0643e;
+            border: 0;
+            cursor: pointer;
+            font-weight: bold;
+            color: white;
+            transition: background-color 0.2s;
+        }
+
+        .registerButton{
+            text-align: center;
+            width: 400px;
+            margin: 20px auto;
+        }
+
+        .registerButton p{
+            color: white;
+        }
+
+        .registerButton button{
+            width: 100%;
+            height:100%;
+            padding: 15px;
+            margin-top: 5px;
+            background-color: #f6be58;
+            border: 0;
+            cursor: pointer;
+            font-weight: bold;
+            color: #342d2d;
+            transition: background-color 0.2s;
+        }
+
+        .logoutButton{
+            text-align: center;
+            width: 400px;
+            margin: 70px auto;
+        }
+
+        .logoutButton p{
+            color: white;
+        }
+
+        .logoutButton button{
+            width: 100%;
+            height:100%;
+            padding: 15px;
+            margin-top: 5px;
+            background-color: #8c1e1e;
+            border: 0;
+            cursor: pointer;
+            font-weight: bold;
+            color: white;
+            transition: background-color 0.2s;
+        }
+    </style>
+</head>
+<body>
+
+<a href="../"><img class = "logo" src="../images/logov2white.png" alt="logo"></a>
+
+<p class = 'options'> I would like to ...</p>
+
+<div class = "loginButton">
+    <button onclick="location.href = 'loginform.html';"> Log In </button>
+</div>
+
+<div class = "registerButton">
+    <button onclick="location.href = 'register.html';"> Create an Account </button>
+</div>
+
+
+<div class = "logoutButton">
+    <button onclick="location.href = 'logout.php';"> Log Out </button>
+</div>
+</body>
+</html>

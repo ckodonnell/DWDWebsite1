@@ -1,14 +1,9 @@
-<!-- from here: https://codeshack.io/secure-login-system-php-mysql/ -->
-
-<?php
-session_start();
-?>
-
+<!-- registration from here-->
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Login</title>
+    <title>Register</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Rammetto+One" />
 
@@ -21,6 +16,7 @@ session_start();
             -moz-osx-font-smoothing: grayscale;
             font-family: Tahoma, Arial, sans-serif;
         }
+
         body {
             background-color: #1c1c1c;
         }
@@ -32,13 +28,13 @@ session_start();
             top: 8px;
             text-align: center;
         }
-        .login {
+        .register {
             width: 400px;
-            background-color: #f1d0bc;
+            background-color: #f1e0bc;
             box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
             margin: 100px auto;
         }
-        .login h1 {
+        .register h1 {
             text-align: center;
             color: #34332f;
             font-size: 24px;
@@ -46,88 +42,93 @@ session_start();
             border-bottom: 1px solid #34332f;
             font-family: "Rammetto One", sans-serif;
         }
-        .login form {
+        .register form {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             padding-top: 30px;
         }
-        .login form label {
+        .register form label {
             display: flex;
             justify-content: center;
             align-items: center;
             width: 50px;
             height: 50px;
-            background-color: #e0643e;
+            background-color: #f6be58;
             color: #ffffff;
         }
-        .login form input[type="password"], .login form input[type="text"] {
+        .register form input[type="password"], .register form input[type="text"], .register form input[type="confirmPass"] {
             width: 310px;
             height: 50px;
-            border: 1px solid #e0643e;
+            border: 1px solid #f6be58;
             margin-bottom: 20px;
             padding: 0 15px;
         }
-        .login form input[type="submit"] {
+        .register form input[type="submit"] {
             width: 100%;
             height:100%;
             padding: 15px;
             margin-top: 20px;
-            background-color: #e0643e;
+            background-color: #f6be58;
             border: 0;
             cursor: pointer;
             font-weight: bold;
-            color: #ffffff;
+            color: #2d2d2d;
             transition: background-color 0.2s;
         }
-        .login form input[type="submit"]:hover {
-            background-color: #be4713;
+        .register form input[type="submit"]:hover {
+            background-color: #d59f15;
             transition: background-color 0.2s;
         }
 
-        .registerButton{
+        .loginButton{
             text-align: center;
             width: 400px;
             margin: 100px auto;
         }
 
-        .registerButton p{
+        .loginButton p{
             color: white;
         }
 
-        .registerButton button{
+        .loginButton button{
             width: 100%;
             height:100%;
             padding: 15px;
             margin-top: 5px;
-            background-color: #f6be58;
+            background-color: #e0643e;
             border: 0;
             cursor: pointer;
             font-weight: bold;
-            color: #342d2d;
+            color: white;
             transition: background-color 0.2s;
         }
+
     </style>
 </head>
 <body>
-<div class="login">
+<div class="register">
     <a href="../"><img class = "logo" src="../images/Logo_v3.png" alt="logo"></a>
-    <form action="authenticate.php" method="post">
+    <form action="register.php" method="post" autocomplete="off">
         <label for="username">
-            <i class="fas fa-user"></i>
+            <i class="fas fa-user" style = "color: #2d2d2d"></i>
         </label>
         <input type="text" name="username" placeholder="Username" id="username" required>
         <label for="password">
-            <i class="fas fa-lock"></i>
+            <i class="fas fa-lock" style = "color: #2d2d2d"></i>
         </label>
         <input type="password" name="password" placeholder="Password" id="password" required>
-        <input type="submit" value="Login">
+        <label for="confirmPass">
+            <i class="fas fa-lock" style = "color: #2d2d2d"></i>
+        </label>
+        <input type="password" name="confirmPass" placeholder="Confirm Password" id="confirmPass" required>
+        <input type="submit" value="Register">
     </form>
 </div>
 
-<div class = "registerButton">
-    <p> Don't have an account yet?</p>
-    <button onclick="location.href = 'register.html';"> Create an Account! </button>
+<div class = "loginButton">
+    <p> Already have an account?</p>
+    <button onclick="location.href = 'loginform.html';"> Log in instead! </button>
 </div>
 </body>
 </html>

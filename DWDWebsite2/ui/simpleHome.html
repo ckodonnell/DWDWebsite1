@@ -21,7 +21,7 @@ Home page
 
     <style>
         .banner{
-            background: rgb(255, 94, 81) no-repeat;
+            background: #DBCEBA no-repeat;
             position: absolute;
             height: 100%;
             display: flex;
@@ -34,12 +34,12 @@ Home page
         }
         h1{
             font-family: "Rammetto One", sans-serif;
-            color: #ecd8cb;
+            color: #111111;
             font-size: 3.5vw;
         }
 
         .description{
-            color: #ecd8cb;
+            color: #111111;
             font-family: Tahoma, Arial, sans-serif;
             position: absolute;
             font-size: 1.40vw;
@@ -62,7 +62,7 @@ Home page
 
         .faces{
             top: 9.8vh;
-            height: 90%;
+            height: 90.2%;
             width: 27%;
             left: 0px;
             z-index: 90;
@@ -75,7 +75,7 @@ Home page
         }
 
         .report{
-            color: #ecd8cb;
+            color: #d05a0b;
             position:absolute;
             bottom:10px;
             right: 15px;
@@ -90,10 +90,11 @@ Home page
 
         .logo{
             position: fixed;
-            left: 4vh;
+            left: 1.8vw;
+            top: 3.15vh;
             max-height: 100%;
             max-width: 100%;
-            height: 7.5vh;
+            height: 4.5vh;
             z-index: 1001;
         }
 
@@ -119,18 +120,27 @@ Home page
             top:2.8vh;
         }
 
-        .fa-user:hover{
-
+        .greetUser{
+            position: fixed;
+            right: 11vh;
+            z-index: 1001;
+            top: 1.6vh;
+            color:white;
+            font-family: Tahoma, Arial, sans-serif;
         }
+
     </style>
 </head>
 
 <body>
 
 <!-- navigation bar features -->
-<a href="{{ @BASE }}/"><img class = "logo" src="{{ @BASE }}/images/Logo_v3.png" alt="logo"></a>
+<a href="{{ @BASE }}/"><img class = "logo" src="{{ @BASE }}/images/logov2white.png" alt="logo"></a>
 
-<a href= "{{ @BASE }}/login/loginform.html" class = "icon"> <i class="fas fa-user fa-2x" style="color:black"></i> </a>
+<p class = "greetUser">{{ @username }} </p>
+<div class = "icon">
+    <a href= "./login/optionScreen.html"> <i class="fas fa-user fa-2x" style="color:white"></i> </a>
+</div>
 
 <!-- navigation bar -->
 <nav>
@@ -147,7 +157,7 @@ Home page
     </ul>
 </nav>
 
-<img class="faces" src="https://s2250677.edinburgh.domains/DWDWebsite1/images/faces.png"/>
+<img class="faces" src="https://s2250677.edinburgh.domains/DWDWebsite2/images/betaversion_homepagev2.png"/>
 <div class = "eyes"></div>
 
 <div class = "banner">
@@ -159,7 +169,6 @@ Home page
         <p>
             Feeling particularly adventurous? Upload your art to our gallery to be featured alongside hundreds of other aspiring Cubist artists!
         </p>
-        <p> hello {{ @username }} </p>
     </div>
 </div>
 
