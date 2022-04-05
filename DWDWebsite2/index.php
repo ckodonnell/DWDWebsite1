@@ -25,7 +25,8 @@ $f3->set('DEBUG',3);		// set maximum debug level
 $f3->set('UI','ui/');		// folder for View templates
 header('Access-Control-Allow-Origin: http://s2250677.edinburgh.domains/DWDWebsite2/');
 
-$f3->set("username", $_SESSION["name"]);
+$f3->set("username", $_SESSION["username"]);
+$f3->set("loggedin", $_SESSION["loggedin"]);
 
 /**
  * CORS
@@ -213,7 +214,12 @@ $f3->route('POST /canvasDraw',
     {
         $formdata = array();			// array to pass on the entered data in
         $formdata["ArtworkName"] = $f3->get('POST.artName');			// whatever was called "name" on the form
-        $formdata["Name"] = $f3->get('POST.yourName');		// whatever was called "colour" on the form
+        if (isset($_SESSION['username'])){
+            $formdata["Name"] = $_SESSION['username'];
+        }
+        else{
+            $formdata["Name"] = $f3->get('POST.yourName'); // whatever was called "artname" on the form
+        }
         $formdata["ArtworkURL"] = $f3->get('POST.artURL');		// whatever was called "artURL" on the form
         $controller = new SimpleController('UserUploads');
         $controller->putIntoDatabase($formdata);
@@ -232,12 +238,32 @@ $f3->route('GET /userGallery',
         $alldata = $controller->getData();
 
         $f3->set("dbData", $alldata);
-        $f3->set("username", $_SESSION["name"]);
+        $f3->set("username", $_SESSION["username"]);
         $f3->set('html_title','User Gallery');
         $f3->set('content','userGallery.html');
         echo template::instance()->render('layout.html');
     }
 );
+
+$f3->route('GET /userProfile',
+    function($f3)
+    {
+        //$controller = new SimpleController('UserUploads');
+
+        if (isset($_SESSION['username'])){
+            //$alldata = getUserUploads($_SESSION['username']);
+            //$f3->set("dbData", $alldata);
+            $f3->set("username", $_SESSION['username']);
+            $f3->set('html_title','User Profile');
+            $f3->set('content','userProfile.php');
+            echo template::instance()->render('layout.html');
+        }
+        else{
+            echo "Please log in to see your profile!";
+        }
+    }
+);
+
 
 
 //==============================================================================

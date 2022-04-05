@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!-- Machine learning model imported from https://tfhub.dev/google/magenta/arbitrary-image-stylization-v1-256/2-->
 <!-- Implementation inspired by https://github.com/armindocachada/fast-style-transfer-tensorflowjs -->
 
@@ -70,12 +74,23 @@
             z-index: 1001;
             top:2.8vh;
         }
+
+        .greetUser{
+            position: fixed;
+            right: 11vh;
+            z-index: 1001;
+            top: 1.6vh;
+            color:white;
+            font-family: Tahoma, Arial, sans-serif;
+        }
     </style>
 </head>
 
 <body>
 <a href="{{ @BASE }}/"><img class = "logo" src="{{ @BASE }}/images/logov2white.png" alt="logo"></a>
-<a href= "{{ @BASE }}/login/loginform.html" class = "icon"> <i class="fas fa-user fa-2x" style="color:white"></i> </a>
+
+<p class = "greetUser">{{ @username }} </p>
+<a href = "https://s2250677.edinburgh.domains/DWDWebsite2/ui/userProfile.php" class = "icon"> <i class="fas fa-user fa-2x" style="color:white"></i> </a>
 
 
 <!-- navigation bar -->

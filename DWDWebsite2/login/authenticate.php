@@ -1,6 +1,7 @@
 <?php
 //USER LOGIN AND AUTHENTICATION (from here: https://codeshack.io/secure-login-csystem-php-mysql/#creatingthehomepage )
 
+session_set_cookie_params((60*60*24*31), '/', '.s2250677.edinburgh.domains'); //setting for 31 days
 session_start();
 // Change this to your connection info.
 $DATABASE_HOST = 'localhost';
@@ -39,10 +40,9 @@ if ($stmt = $con->prepare('SELECT id, password FROM accounts WHERE username = ?'
             // Create sessions, so we know the user is logged in, they basically act like cookies but remember the data on the server.
             session_regenerate_id();
             $_SESSION['loggedin'] = TRUE;
-            $_SESSION['name'] = $_POST['username'];
+            $_SESSION['username'] = $_POST['username'];
             $_SESSION['id'] = $id;
-            header('Location: ../');
-            //header('Location: home.php');
+            header('Location: https://s2250677.edinburgh.domains/DWDWebsite2/');
             exit();
         } else {
             // Incorrect password

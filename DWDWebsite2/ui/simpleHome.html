@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 ?>
 
 <!--
@@ -13,6 +14,7 @@ Home page
     <title>Cubism Home</title>
 
     <link rel="stylesheet" href="https://s2250677.edinburgh.domains/DWDWebsite2/css/site.css">
+    <link rel="stylesheet" href="https://s2250677.edinburgh.domains/DWDWebsite2/css/canvasHelp2.css">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Rammetto+One" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"/>
 
@@ -138,9 +140,8 @@ Home page
 <a href="{{ @BASE }}/"><img class = "logo" src="{{ @BASE }}/images/logov2white.png" alt="logo"></a>
 
 <p class = "greetUser">{{ @username }} </p>
-<div class = "icon">
-    <a href= "./login/optionScreen.html"> <i class="fas fa-user fa-2x" style="color:white"></i> </a>
-</div>
+<a href = "https://s2250677.edinburgh.domains/DWDWebsite2/ui/userProfile.php" class = "icon"> <i class="fas fa-user fa-2x" style="color:white"></i> </a>
+
 
 <!-- navigation bar -->
 <nav>
@@ -170,6 +171,7 @@ Home page
             Feeling particularly adventurous? Upload your art to our gallery to be featured alongside hundreds of other aspiring Cubist artists!
         </p>
     </div>
+    <button class="button-53" role="button" onclick="location.href = 'https://s2250677.edinburgh.domains/DWDWebsite2/';"> Start creating now!</button>
 </div>
 
 <a class = "report" href="https://s2250677.edinburgh.domains/DWDWebsite1/assets/CYOubismAlphaReport1.pdf">REPORT</a>
