@@ -1,7 +1,14 @@
 <?php
 //USER LOGIN AND AUTHENTICATION (from here: https://codeshack.io/secure-login-csystem-php-mysql/#creatingthehomepage )
 
-session_set_cookie_params((60*60*24*31), '/', '.s2250677.edinburgh.domains'); //setting for 31 days
+$samesite = 'lax';
+//session_set_cookie_params((60*60*24*31), '/', '.s2250677.edinburgh.domains'); //setting for 31 days
+
+session_set_cookie_params([
+    'lifetime' => (60*60*24*31),
+    'path' => '/',
+    'samesite' => $samesite
+]);
 session_start();
 // Change this to your connection info.
 $DATABASE_HOST = 'localhost';

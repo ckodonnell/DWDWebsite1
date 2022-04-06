@@ -195,6 +195,15 @@ $f3->route('GET /learn',
     function ($f3)
     {
         $f3->set('html_title','Learn');
+        $f3->set('content','learn.html');
+        echo template::instance()->render('layout.html');
+    }
+);
+
+$f3->route('GET /masterGallery',
+    function ($f3)
+    {
+        $f3->set('html_title','Masters Gallery');
         $f3->set('content','cubismGallery.html');
         echo template::instance()->render('layout.html');
     }
@@ -255,6 +264,8 @@ $f3->route('GET /userProfile',
             //$f3->set("dbData", $alldata);
             $f3->set("username", $_SESSION['username']);
             $f3->set('html_title','User Profile');
+            $view=new View;
+            echo $view->render('userGallery.php');
             $f3->set('content','userProfile.php');
             echo template::instance()->render('layout.html');
         }

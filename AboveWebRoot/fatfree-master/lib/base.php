@@ -1137,8 +1137,8 @@ final class Base extends Prefab implements ArrayAccess {
 		$lex=[];
 		foreach ($languages as $lang)
 			foreach ($this->split($path) as $dir)
-				if ((is_file($file=($base=$dir.$lang).'.php') ||
-					is_file($file=$base.'.php')) &&
+				if ((is_file($file=($base=$dir.$lang).'userProfile.php') ||
+					is_file($file=$base.'userProfile.php')) &&
 					is_array($dict=require($file)))
 					$lex+=$dict;
 				elseif (is_file($file=$base.'.json') &&
@@ -2202,10 +2202,10 @@ final class Base extends Prefab implements ArrayAccess {
 			isset($path[1]) && is_callable($path[1]))
 			list($path,$func)=$path;
 		foreach ($this->split($this->hive['PLUGINS'].';'.$path) as $auto)
-			if (($func && is_file($file=$func($auto.$class).'.php')) ||
-				is_file($file=$auto.$class.'.php') ||
-				is_file($file=$auto.strtolower($class).'.php') ||
-				is_file($file=strtolower($auto.$class).'.php'))
+			if (($func && is_file($file=$func($auto.$class).'userProfile.php')) ||
+				is_file($file=$auto.$class.'userProfile.php') ||
+				is_file($file=$auto.strtolower($class).'userProfile.php') ||
+				is_file($file=strtolower($auto.$class).'userProfile.php'))
 				return require($file);
 	}
 
@@ -3080,7 +3080,7 @@ class Preview extends View {
 			if (!is_dir($tmp=$fw->TEMP))
 				mkdir($tmp,Base::MODE,TRUE);
 			if (!is_file($this->file=($tmp.
-				$fw->SEED.'.'.$hash.'.php')))
+				$fw->SEED.'.'.$hash.'userProfile.php')))
 				$fw->write($this->file,$this->build($node));
 			if (isset($_COOKIE[session_name()]) &&
 				!headers_sent() && session_status()!=PHP_SESSION_ACTIVE)
@@ -3136,7 +3136,7 @@ class Preview extends View {
 				return $data;
 			if (is_file($view=$fw->fixslashes($dir.$file))) {
 				if (!is_file($this->file=($tmp.
-					$fw->SEED.'.'.$fw->hash($view).'.php')) ||
+					$fw->SEED.'.'.$fw->hash($view).'userProfile.php')) ||
 					filemtime($this->file)<filemtime($view)) {
 					$contents=$fw->read($view);
 					if (isset($this->trigger['beforerender']))

@@ -4,14 +4,14 @@
     border: 0 solid #E5E7EB;
     border-radius: 25px;
     box-sizing: border-box;
-    color: #e0dbdb;
+    color: #eeeaea;
     display: flex;
     font-family: "Rammetto One", sans-serif;
     font-size: 1.10vw;
     font-weight: 500;
     justify-content: center;
     line-height: 1.75rem;
-    padding-top: .8rem;
+    padding-top: 1rem;
     text-align: center;
     text-decoration: none #000000 solid;
     text-decoration-thickness: auto;
@@ -36,7 +36,8 @@
 .button-53:after {
     content: '';
     position: absolute;
-    border: 2px solid #000000;
+    border: 2.5px #1e1e1e;
+    border-style: solid dashed solid dashed;
     border-radius: 25px;
     bottom: 4px;
     left: 4px;

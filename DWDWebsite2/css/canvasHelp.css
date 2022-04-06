@@ -30,12 +30,12 @@ h1 {
     text-decoration: none;
     cursor: pointer;
     transition: all 0.3s ease-out;
-    background: #e7632a;
+    background: #F15B2A;
     font-family: Tahoma, Arial, sans-serif;
 }
 
 .button:hover {
-    background: #753721;
+    background: #914428;
 }
 
 .overlay {

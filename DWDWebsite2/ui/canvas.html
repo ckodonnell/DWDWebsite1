@@ -208,24 +208,25 @@ session_start();
 <p class = "greetUser">{{ @username }} </p>
 <a href = "https://s2250677.edinburgh.domains/DWDWebsite2/ui/userProfile.php" class = "icon"> <i class="fas fa-user fa-2x" style="color:white"></i> </a>
 
-
-
 <!-- navigation bar -->
-<div>
-    <nav>
-        <ul>
-            <li><a href="{{ @BASE }}/"> Home </a></li>
-            <li><a href="{{ @BASE }}/learn"> Learn </a></li>
-            <li class="create"><a href="{{ @BASE }}/"> Create</a>
-                <ul class="dropdown">
-                    <li class = "dditem"><a href="{{ @BASE }}/style-transfer"> Style Transfer</a></li>
-                    <li class = "dditem"><a href="{{ @BASE }}/canvas">Canvas</a></li>
-                </ul>
-            </li>
-            <li><a href="{{ @BASE }}/userGallery">Community</a></li>
-        </ul>
-    </nav>
-</div>
+<nav>
+    <ul>
+        <li><a href="{{ @BASE }}/learn"> Learn </a></li>
+        <li class="create"><a href="{{ @BASE }}/canvas"> Create</a>
+            <ul class="dropdown">
+                <li class = "dditem"><a href="{{ @BASE }}/style-transfer"> Style Transfer</a></li>
+                <li class = "dditem"><a href="{{ @BASE }}/canvas">Canvas</a></li>
+            </ul>
+        </li>
+        <li class="create"><a href="{{ @BASE }}/masterGallery">Galleries</a>
+            <ul class="dropdown">
+                <li class = "dditem"><a href="{{ @BASE }}/masterGallery">Masters' Gallery</a></li>
+                <li class = "dditem"><a href="{{ @BASE }}/userGallery">Community Gallery</a></li>
+            </ul>
+        </li>
+        <!--<li><a href="{{ @BASE }}/userGallery">Community</a></li> -->
+    </ul>
+</nav>
 
 <section class = "canvasContainer">
     <img src="https://s2250677.edinburgh.domains/DWDWebsite2/images/bg5.2.png" id = "mainBG">

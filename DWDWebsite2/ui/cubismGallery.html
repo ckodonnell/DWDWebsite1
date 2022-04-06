@@ -21,7 +21,7 @@ session_start();
     <style>
         .galleryArray{
             background-color: #DBCEBA;
-            top: 78%;
+            top: 9.81vh;
             right: 0vh;
             bottom: 0;
             padding: 0px;
@@ -89,94 +89,24 @@ session_start();
 
 
 <!-- navigation bar -->
-<div>
-    <nav>
-        <ul>
-            <li><a href="{{ @BASE }}/"> Home </a></li>
-            <li><a href="{{ @BASE }}/learn"> Learn </a></li>
-            <li class="create"><a href="{{ @BASE }}/"> Create</a>
-                <ul class="dropdown">
-                    <li class = "dditem"><a href="{{ @BASE }}/style-transfer"> Style Transfer</a></li>
-                    <li class = "dditem"><a href="{{ @BASE }}/canvas">Canvas</a></li>
-                </ul>
-            </li>
-            <li><a href="{{ @BASE }}/userGallery">Community</a></li>
-        </ul>
-    </nav>
-</div>
-
-<!-- From: https://codepen.io/mikun/pen/YWgqEX */ -->
-<div class="slider__wrapper">
-    <div class="flex__container flex--zekrom flex--active" data-slide="1">
-        <div class="flex__item flex__item--left">
-            <div class="flex__content">
-                <p class="text--sub">Overview...</p>
-                <h1 class="text--big">Cubism</h1>
-                <p class="text--normal">Cubism is an art form from the early 20th century. It is an abstract form of art where shapes come together to form a complete picture. If you can't see it at first, try stepping away from the canvas and looking from a new angle!</p>
-            </div>
-            <!--<p class="text__background">Cubism</p>-->
-        </div>
-        <div class="flex__item flex__item--right"></div>
-        <img class="pokemon__img" src="https://s2250677.edinburgh.domains/DWDWebsite2/images/marcoussis.jpeg" />
-    </div>
-    <div class="flex__container flex--piplup animate--start" data-slide="2">
-        <div class="flex__item flex__item--left">
-            <div class="flex__content">
-                <p class="text--sub">Characteristics of Cubism...</p>
-                <h1 class="text--big">Style</h1>
-                <p class="text--normal">Cubism has a very distinct, open-form style characterized by the use of geometric shapes. It can be lined or lineless, with bold colors or without. This unique style inspired many other art movements like Futurism and Dadaism. </p>
-            </div>
-            <!--<p class="text__background">Style</p> -->
-        </div>
-        <div class="flex__item flex__item--right"></div>
-        <img class="pokemon__img" src="https://s2250677.edinburgh.domains/DWDWebsite2/images/Niemann.jpg" />
-    </div>
-    <div class="flex__container flex--blaziken animate--start" data-slide="3">
-
-        <div class="flex__item flex__item--left">
-            <div class="flex__content">
-                <p class="text--sub">A Growing Movement...</p>
-                <h1 class="text--big">History</h1>
-                <p class="text--normal"> Cubism arose in Europe in the early 1910s. This art style represented a different way of expressing the physical world— a way that was more abstract and reflected the strangeness of that era. In addition to paintings, Cubism has also been seen in architecture all over Europe. And while the style is over 100 years old, many artists still draw inspiration from it today. </p>
-            </div>
-            <!--<p class="text__background">History</p> -->
-        </div>
-        <div class="flex__item flex__item--right"></div>
-        <img class="pokemon__img" src="https://s2250677.edinburgh.domains/DWDWebsite2/images/streetpavers.jpg" />
-    </div>
-    <div class="flex__container flex--dialga animate--start" data-slide="4">
-        <div class="flex__item flex__item--left">
-            <div class="flex__content">
-                <p class="text--sub">Credits to the Artists...</p>
-                <h1 class="text--big">Artists</h1>
-                <p class="text--normal">The most famous cubist artist is Pablo Picasso, a Spanish painter from the early 20th century. Other famous cubist artists include Metzinger, Miró, Braque, and Dalí, while Cézanne is widely considered the father of this movement. Each artist has their own distinct style. </p>
-            </div>
-            <!--<p class="text__background">Artists</p>-->
-        </div>
-        <div class="flex__item flex__item--right"></div>
-        <img class="pokemon__img" src="https://s2250677.edinburgh.domains/DWDWebsite2/images/cezanne.jpeg" />
-    </div>
-    <div class="flex__container flex--pikachu animate--start" data-slide="5">
-        <div class="flex__item flex__item--left">
-            <div class="flex__content">
-                <p class="text--sub">For the Curious Viewers...</p>
-                <h1 class="text--big">Explore</h1>
-                <p class="text--normal"> Check out the art of some of these famous painters in the gallery below! Hover over each painting for more information. </p>
-            </div>
-            <!--<p class="text__background">Explore</p>-->
-        </div>
-        <div class="flex__item flex__item--right"></div>
-        <img class="pokemon__img" src="https://s2250677.edinburgh.domains/DWDWebsite2/images/segal.jpeg" />
-    </div>
-</div>
-
-<div class="slider__navi">
-    <a href="#" class="slide-nav active" data-slide="1">pikachu</a>
-    <a href="#" class="slide-nav" data-slide="2">piplup</a>
-    <a href="#" class="slide-nav" data-slide="3">blaziken</a>
-    <a href="#" class="slide-nav" data-slide="4">dialga</a>
-    <a href="#" class="slide-nav" data-slide="5">zekrom</a>
-</div>
+<nav>
+    <ul>
+        <li><a href="{{ @BASE }}/learn"> Learn </a></li>
+        <li class="create"><a href="{{ @BASE }}/canvas"> Create</a>
+            <ul class="dropdown">
+                <li class = "dditem"><a href="{{ @BASE }}/style-transfer"> Style Transfer</a></li>
+                <li class = "dditem"><a href="{{ @BASE }}/canvas">Canvas</a></li>
+            </ul>
+        </li>
+        <li class="create"><a href="{{ @BASE }}/masterGallery">Galleries</a>
+            <ul class="dropdown">
+                <li class = "dditem"><a href="{{ @BASE }}/masterGallery">Masters' Gallery</a></li>
+                <li class = "dditem"><a href="{{ @BASE }}/userGallery">Community Gallery</a></li>
+            </ul>
+        </li>
+        <!--<li><a href="{{ @BASE }}/userGallery">Community</a></li> -->
+    </ul>
+</nav>
 
 <!-- Styling made possible by https://isotope.metafizzy.co/ */ -->
 <section class = "galleryArray">
@@ -335,6 +265,7 @@ session_start();
 
     /* From: https://codepen.io/mikun/pen/YWgqEX */
     $('.slide-nav').on('click', function(e) {
+        async: false;
         e.preventDefault();
         // get current slide
         var current = $('.flex--active').data('slide'),

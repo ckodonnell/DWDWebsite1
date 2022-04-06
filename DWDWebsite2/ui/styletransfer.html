@@ -32,7 +32,7 @@ session_start();
             right: 0;
             padding: 0px;
             text-align: right;
-            background-color: #ec7979;
+            background-color: #DBCEBA;
             background-size: 100%;
             font-family: Tahoma, Arial, sans-serif
         }
@@ -40,7 +40,7 @@ session_start();
         h1 {
             text-align: center;
             /*font-family: Tahoma, Arial, sans-serif;*/
-            color: #fffaf3;
+            color: #1e1e1e;
             margin: 30px 0;
             font-family: "Rammetto One", sans-serif;
         }
@@ -83,6 +83,34 @@ session_start();
             color:white;
             font-family: Tahoma, Arial, sans-serif;
         }
+         /* inspired by https://codepen.io/dcode-software/pen/abZPmRb */
+        #button--loading {
+            content: "";
+            display: none;
+            position: absolute;
+            z-index: 1;
+            width: 16px;
+            height: 16px;
+            top: 50%;
+            left: 50%;
+            margin: auto;
+            border: 4px solid transparent;
+            border-top-color: #ffffff;
+            border-radius: 50%;
+            animation: button-loading-spinner 1s ease infinite;
+            padding: 30px;
+        }
+
+        @keyframes button-loading-spinner {
+            from {
+                transform: rotate(0turn);
+            }
+
+            to {
+                transform: rotate(1turn);
+            }
+        }
+
     </style>
 </head>
 
@@ -94,21 +122,24 @@ session_start();
 
 
 <!-- navigation bar -->
-<div>
-    <nav>
-        <ul>
-            <li><a href="{{ @BASE }}/"> Home </a></li>
-            <li><a href="{{ @BASE }}/learn"> Learn </a></li>
-            <li class="create"><a href="{{ @BASE }}/"> Create</a>
-                <ul class="dropdown">
-                    <li class = "dditem"><a href="{{ @BASE }}/style-transfer"> Style Transfer</a></li>
-                    <li class = "dditem"><a href="{{ @BASE }}/canvas">Canvas</a></li>
-                </ul>
-            </li>
-            <li><a href="{{ @BASE }}/userGallery">Community</a></li>
-        </ul>
-    </nav>
-</div>
+<nav>
+    <ul>
+        <li><a href="{{ @BASE }}/learn"> Learn </a></li>
+        <li class="create"><a href="{{ @BASE }}/canvas"> Create</a>
+            <ul class="dropdown">
+                <li class = "dditem"><a href="{{ @BASE }}/style-transfer"> Style Transfer</a></li>
+                <li class = "dditem"><a href="{{ @BASE }}/canvas">Canvas</a></li>
+            </ul>
+        </li>
+        <li class="create"><a href="{{ @BASE }}/masterGallery">Galleries</a>
+            <ul class="dropdown">
+                <li class = "dditem"><a href="{{ @BASE }}/masterGallery">Masters' Gallery</a></li>
+                <li class = "dditem"><a href="{{ @BASE }}/userGallery">Community Gallery</a></li>
+            </ul>
+        </li>
+        <!--<li><a href="{{ @BASE }}/userGallery">Community</a></li> -->
+    </ul>
+</nav>
 
 <!-- style transfer -->
 <div class = "transfer-section">
@@ -176,6 +207,8 @@ session_start();
     </div>
 </div>
 
+<div id = "button--loading"></div>
+
 </body>
 </html>
 
@@ -183,29 +216,29 @@ session_start();
 <script>
     window.addEventListener('load', initStyleTransfer());
 
-  let changeImageUser = function (evt) {
-      const tgt = evt.target || window.EventTarget,
-          files = tgt.files;
+    let changeImageUser = function (evt) {
+        const tgt = evt.target || window.EventTarget,
+            files = tgt.files;
 
-      // FileReader support
-    if (FileReader && files && files.length) {
-        const fr = new FileReader();
-        fr.onload = function () {
-        let targetCanvas = document.getElementById(evt.target.getAttribute("imgid"));
-        resizeAndSquareImage(fr.result, targetCanvas);
+        // FileReader support
+        if (FileReader && files && files.length) {
+            const fr = new FileReader();
+            fr.onload = function () {
+                let targetCanvas = document.getElementById(evt.target.getAttribute("imgid"));
+                resizeAndSquareImage(fr.result, targetCanvas);
 
-      }
-      fr.readAsDataURL(files[0]);
+            }
+            fr.readAsDataURL(files[0]);
 
-      //=doStyleTransfer();
+            //=doStyleTransfer();
+        }
+
+        // Not supported
+        else {
+            // fallback -- perhaps submit the input to an iframe and temporarily store
+            // them on the server until the user's session ends.
+        }
     }
-
-    // Not supported
-    else {
-      // fallback -- perhaps submit the input to an iframe and temporarily store
-      // them on the server until the user's session ends.
-    }
-  }
 
     let changeImageCPU = function (evt) {
         let targetCanvas = document.getElementById("styleImage");
@@ -241,89 +274,95 @@ session_start();
 
     }
 
-  let fastStyleTransferModel;
+    let fastStyleTransferModel;
 
-  document.getElementById("changeImage").onchange = changeImageUser;
-  <!-- document.getElementById("changeStyleImage").onchange = changeImageCPU(); -->
-  document.getElementById("changeStyleImage").addEventListener("change", changeImageCPU);
+    document.getElementById("changeImage").onchange = changeImageUser;
+    <!-- document.getElementById("changeStyleImage").onchange = changeImageCPU(); -->
+    document.getElementById("changeStyleImage").addEventListener("change", changeImageCPU);
 
-  async function initStyleTransfer() {
-    let imageCanvas = document.getElementById("image");
-    let styleImageCanvas = document.getElementById("styleImage");
+    async function initStyleTransfer() {
+        let imageCanvas = document.getElementById("image");
+        let styleImageCanvas = document.getElementById("styleImage");
 
-    let imageUrl = imageCanvas.getAttribute("url");
-    let imageStyleUrl = styleImageCanvas.getAttribute("url");
-    await resizeAndSquareImage(imageUrl, imageCanvas);
-    await resizeAndSquareImage(imageStyleUrl, styleImageCanvas);
+        let imageUrl = imageCanvas.getAttribute("url");
+        let imageStyleUrl = styleImageCanvas.getAttribute("url");
+        await resizeAndSquareImage(imageUrl, imageCanvas);
+        await resizeAndSquareImage(imageStyleUrl, styleImageCanvas);
 
-  }
-
-  async function loadModel() {
-      return tf.loadGraphModel('https://s2250677.edinburgh.domains/DWDWebsite1/modelfiles/model.json');
-  }
-
-  async function doStyleTransfer() {
-    console.log("doStyleTransfer called");
-    // load fast style transfer model only per page load
-    if (!fastStyleTransferModel) {
-      fastStyleTransferModel = await loadModel();
     }
-    // get image to apply style to
-    const image = document.getElementById("image");
-    const styleImage = document.getElementById("styleImage");
 
-    console.log("model=" + fastStyleTransferModel);
+    async function loadModel() {
+        return tf.loadGraphModel('https://s2250677.edinburgh.domains/DWDWebsite1/modelfiles/model.json');
+    }
 
-    let imageTensor = preprocess(image);
-    let styleImageTensor = preprocess(styleImage);
-    imageTensor = tf.pool(imageTensor, 3, 'avg', 'same', [1, 1], 1);
-    styleImageTensor = tf.pool(styleImageTensor, 3, 'avg', 'same', [1, 1], 1);
+    async function doStyleTransfer() {
+        console.log("doStyleTransfer called");
 
-    let result = fastStyleTransferModel.execute([imageTensor, styleImageTensor]);
-    let canvas = document.getElementById("stylizedImage");
+        const load = document.getElementById("button--loading");
+        load.style.display = "block";
 
-      tf.engine().startScope()
-      tf.browser.toPixels( tf.squeeze(result), canvas);
-      tf.tidy();
-      tf.engine().endScope()
+        // load fast style transfer model only per page load
+        if (!fastStyleTransferModel) {
+            fastStyleTransferModel = await loadModel();
+        }
+        // get image to apply style to
+        const image = document.getElementById("image");
+        const styleImage = document.getElementById("styleImage");
 
-  }
+        console.log("model=" + fastStyleTransferModel);
 
-  function preprocess(imageData) {
-    let imageTensor = tf.browser.fromPixels(imageData);
-    const offset = tf.scalar(255.0);
-    const normalized = imageTensor.div(offset);
-    const batched = normalized.expandDims(0);
-    batched.print();
-    return batched;
+        let imageTensor = preprocess(image);
+        let styleImageTensor = preprocess(styleImage);
+        imageTensor = tf.pool(imageTensor, 3, 'avg', 'same', [1, 1], 1);
+        styleImageTensor = tf.pool(styleImageTensor, 3, 'avg', 'same', [1, 1], 1);
 
-  }
+        let result = fastStyleTransferModel.execute([imageTensor, styleImageTensor]);
+        let canvas = document.getElementById("stylizedImage");
+
+        tf.engine().startScope();
+        tf.browser.toPixels( tf.squeeze(result), canvas);
+        load.style.display = "none";
+        tf.tidy();
+        tf.engine().endScope();
 
 
-  function resizeAndSquareImage(imageUrl, targetCanvas) {
-    // the desired aspect ratio of our output image (width / height)
-    const outputImageAspectRatio = 1;
+    }
 
-    // this image will hold our source image data
-    const inputImage = new Image();
-    console.log("resizeAndSquareImage called");
-    // we want to wait for our image to load
-    let result = inputImage.onload = () => {
-      const imgSize = Math.min(inputImage.width, inputImage.height);
-      // The following two lines yield a central based cropping.
-      // They can both be amended to be 0, if you wish it to be
-      // a left based cropped image.
-      const left = (inputImage.width - imgSize) / 2;
-      const top = (inputImage.height - imgSize) / 2;
-      //var left = 0; // If you wish left based cropping instead.
-      //var top = 0; // If you wish left based cropping instead.
-      const ctx = targetCanvas.getContext("2d");
-      ctx.drawImage(inputImage, left, top, imgSize, imgSize, 0, 0, targetCanvas.width, targetCanvas.height);
-      return targetCanvas;
-    };
-    inputImage.src = imageUrl;
-    return result;
-  }
+    function preprocess(imageData) {
+        let imageTensor = tf.browser.fromPixels(imageData);
+        const offset = tf.scalar(255.0);
+        const normalized = imageTensor.div(offset);
+        const batched = normalized.expandDims(0);
+        batched.print();
+        return batched;
+
+    }
+
+
+    function resizeAndSquareImage(imageUrl, targetCanvas) {
+        // the desired aspect ratio of our output image (width / height)
+        const outputImageAspectRatio = 1;
+
+        // this image will hold our source image data
+        const inputImage = new Image();
+        console.log("resizeAndSquareImage called");
+        // we want to wait for our image to load
+        let result = inputImage.onload = () => {
+            const imgSize = Math.min(inputImage.width, inputImage.height);
+            // The following two lines yield a central based cropping.
+            // They can both be amended to be 0, if you wish it to be
+            // a left based cropped image.
+            const left = (inputImage.width - imgSize) / 2;
+            const top = (inputImage.height - imgSize) / 2;
+            //var left = 0; // If you wish left based cropping instead.
+            //var top = 0; // If you wish left based cropping instead.
+            const ctx = targetCanvas.getContext("2d");
+            ctx.drawImage(inputImage, left, top, imgSize, imgSize, 0, 0, targetCanvas.width, targetCanvas.height);
+            return targetCanvas;
+        };
+        inputImage.src = imageUrl;
+        return result;
+    }
 
 
 </script>
