@@ -53,6 +53,16 @@ session_start();
             display:none;
         }
 
+        .grid-item{
+            padding:7px;
+        }
+
+
+        .grid-item img {
+            padding:0px;
+            border: 3px solid #2a2a2a;
+        }
+
         .logo{
             position: fixed;
             left: 1.8vw;
@@ -77,6 +87,17 @@ session_start();
             top: 1.6vh;
             color:white;
             font-family: Tahoma, Arial, sans-serif;
+        }
+
+        .galleryDesc{
+            color: #1e1e1e;
+            font-family: Tahoma, Arial, sans-serif;
+            width:60%;
+            line-height: 26pt;
+            text-align: center;
+            font-weight: bold;
+            margin: auto;
+            padding-bottom: 15px;
         }
     </style>
 </head>
@@ -110,8 +131,11 @@ session_start();
 
 <!-- Styling made possible by https://isotope.metafizzy.co/ */ -->
 <section class = "galleryArray">
-    <h2> Gallery </h2>
-
+    <h2> Masters' Gallery </h2>
+    <p class = "galleryDesc"> In this gallery, you will find artwork created by masters of the Cubist artform. From Spain to England to South Africa, these paintings show the development of the Cubist artstyle across the 20th and 21st centuries.
+        Take a look and explore this diverse collection by clicking on the images for more information— you may even see some names (and faces!) you recognize! </p>
+    <p class = "galleryDesc"> For artwork created by our community here at CYOUbism, check out the <a href="{{ @BASE }}/userGallery" style = "font-family: Tahoma, Arial, sans-serif; color: #ee5919" > community gallery</a>  instead!</p>
+    <br>
     <div class="button-group sort-by-button-group">
         <button id = "first" class="button is-checked" data-sort-value="original-order">Default</button>
         <button class="button" data-sort-value="artName">Artwork Name (A-Z)</button>
@@ -227,6 +251,176 @@ session_start();
                 <br><br>
                 <p class="artDesc">Metzinger </p>
                 <p class="artDate">1916</p>
+            </div>
+        </div>
+
+        <div class="grid-item">
+            <img src="https://s2250677.edinburgh.domains/DWDWebsite2/images/METPublicDomain/bathers.jpeg" alt = "Bathers, Paul Cézanne, (c.1874–75)" class = "myImg" role="button" onclick = "showInfo(this)"/>
+            <div class="info">
+                <h3 class="artName">Bathers</h3>
+                <br><br>
+                <p class="artDesc">Cézanne</p>
+                <p class="artDate">1874</p>
+            </div>
+        </div>
+
+        <div class="grid-item">
+            <img src="https://s2250677.edinburgh.domains/DWDWebsite2/images/METPublicDomain/circus.jpeg" alt = "Circus Sideshow (Parade de cirque), Georges Seurat, (c.1887–88)" class = "myImg" role="button" onclick = "showInfo(this)"/>
+            <div class="info">
+                <h3 class="artName">Circus</h3>
+                <br><br>
+                <p class="artDesc">Seurat </p>
+                <p class="artDate">1887</p>
+            </div>
+        </div>
+
+        <div class="grid-item">
+            <img src="https://s2250677.edinburgh.domains/DWDWebsite2/images/METPublicDomain/rooftops.jpeg" alt = "View of Rooftops, Morton Schamberg, (c.1917)" class = "myImg" role="button" onclick = "showInfo(this)"/>
+            <div class="info">
+                <h3 class="artName">View</h3>
+                <br><br>
+                <p class="artDesc">Schamberg </p>
+                <p class="artDate">1917</p>
+            </div>
+        </div>
+
+        <div class="grid-item">
+            <img src="https://s2250677.edinburgh.domains/DWDWebsite2/images/WikimediaCommons/bottlenfruit.jpeg" alt = "Bottle and Fruits, Paul Cézanne, (c. 1890)" class = "myImg" role="button" onclick = "showInfo(this)"/>
+            <div class="info">
+                <h3 class="artName">Bottle</h3>
+                <br><br>
+                <p class="artDesc">Cézanne</p>
+                <p class="artDate">1890</p>
+            </div>
+        </div>
+
+        <div class="grid-item">
+            <img src="https://s2250677.edinburgh.domains/DWDWebsite2/images/WikimediaCommons/gun.jpeg" alt = "Camouflaged 280 Gun Sketch, André Mare, (c.1917)" class = "myImg" role="button" onclick = "showInfo(this)"/>
+            <div class="info">
+                <h3 class="artName">Camouflaged</h3>
+                <br><br>
+                <p class="artDesc">Mare </p>
+                <p class="artDate">1917</p>
+            </div>
+        </div>
+
+        <div class="grid-item">
+            <img src="https://s2250677.edinburgh.domains/DWDWebsite2/images/WikimediaCommons/bnwman.jpeg" alt = "Almada Negreiros, Fernando Pessoa, (c. 1915)" class = "myImg" role="button" onclick = "showInfo(this)"/>
+            <div class="info">
+                <h3 class="artName">Almada</h3>
+                <br><br>
+                <p class="artDesc">Pessoa </p>
+                <p class="artDate">1915</p>
+            </div>
+        </div>
+
+        <div class="grid-item">
+            <img src="https://s2250677.edinburgh.domains/DWDWebsite2/images/WikimediaCommons/cafe.jpeg" alt = "Joel's Cafe, Max Weber, (c.1909-10)" class = "myImg" role="button" onclick = "showInfo(this)"/>
+            <div class="info">
+                <h3 class="artName">Joel</h3>
+                <br><br>
+                <p class="artDesc">Weber </p>
+                <p class="artDate">1909</p>
+            </div>
+        </div>
+
+        <div class="grid-item">
+            <img src="https://s2250677.edinburgh.domains/DWDWebsite2/images/WikimediaCommons/hotel.jpeg" alt = "Noční hotel, Eugene Ivanov, (c. 2004)" class = "myImg" role="button" onclick = "showInfo(this)"/>
+            <div class="info">
+                <h3 class="artName">Nocní</h3>
+                <br><br>
+                <p class="artDesc">Ivanov </p>
+                <p class="artDate">2004</p>
+            </div>
+        </div>
+
+        <div class="grid-item">
+            <img src="https://s2250677.edinburgh.domains/DWDWebsite2/images/WikimediaCommons/pierrot.jpeg" alt = "Pierrot, Juan Gris, (c.1921)" class = "myImg" role="button" onclick = "showInfo(this)"/>
+            <div class="info">
+                <h3 class="artName">Pierrot</h3>
+                <br><br>
+                <p class="artDesc">Gris</p>
+                <p class="artDate">1921</p>
+            </div>
+        </div>
+
+        <div class="grid-item">
+            <img src="https://s2250677.edinburgh.domains/DWDWebsite2/images/WikimediaCommons/wife.jpeg" alt = "Portrait of Artist's Wife, Ivan Puni, (c.1914)" class = "myImg" role="button" onclick = "showInfo(this)"/>
+            <div class="info">
+                <h3 class="artName">Portrait of</h3>
+                <br><br>
+                <p class="artDesc">Puni</p>
+                <p class="artDate">1914</p>
+            </div>
+        </div>
+
+        <div class="grid-item">
+            <img src="https://s2250677.edinburgh.domains/DWDWebsite2/images/WikimediaCommons/self.jpeg" alt = "Self Portrait, HG Sophy, (c. 1919)" class = "myImg" role="button" onclick = "showInfo(this)"/>
+            <div class="info">
+                <h3 class="artName">Self</h3>
+                <br><br>
+                <p class="artDesc">Sophy</p>
+                <p class="artDate">1919</p>
+            </div>
+        </div>
+
+        <div class="grid-item">
+            <img src="https://s2250677.edinburgh.domains/DWDWebsite2/images/WikimediaCommons/field.jpeg" alt = "The Tilled Field, Joan Miro, (c. 1924)" class = "myImg" role="button" onclick = "showInfo(this)"/>
+            <div class="info">
+                <h3 class="artName">Tilled</h3>
+                <br><br>
+                <p class="artDesc">Miro</p>
+                <p class="artDate">1924</p>
+            </div>
+        </div>
+
+        <div class="grid-item">
+            <img src="https://s2250677.edinburgh.domains/DWDWebsite2/images/WikimediaCommons/bike.jpeg" alt = "The Bicycle Rider, Charles Demuth, (c. 1919)" class = "myImg" role="button" onclick = "showInfo(this)"/>
+            <div class="info">
+                <h3 class="artName">Bicycle</h3>
+                <br><br>
+                <p class="artDesc">Demuth</p>
+                <p class="artDate">1919</p>
+            </div>
+        </div>
+
+        <div class="grid-item">
+            <img src="https://s2250677.edinburgh.domains/DWDWebsite2/images/WikimediaCommons/bears.jpeg" alt = "Mountaineers Attacked by Bears, Henri Le Fauconnier, (c. 1912)" class = "myImg" role="button" onclick = "showInfo(this)"/>
+            <div class="info">
+                <h3 class="artName">Mountaineers</h3>
+                <br><br>
+                <p class="artDesc">Le</p>
+                <p class="artDate">1912</p>
+            </div>
+        </div>
+
+        <div class="grid-item">
+            <img src="https://s2250677.edinburgh.domains/DWDWebsite2/images/WikimediaCommons/vartoosh.jpg" alt = "Portrait of Vartoosh, Arshille Gorky, (c.1933)" class = "myImg" role="button" onclick = "showInfo(this)"/>
+            <div class="info">
+                <h3 class="artName">Portrait of Vartoosh</h3>
+                <br><br>
+                <p class="artDesc">Gorky</p>
+                <p class="artDate">1933</p>
+            </div>
+        </div>
+
+        <div class="grid-item">
+            <img src="https://s2250677.edinburgh.domains/DWDWebsite2/images/WikimediaCommons/windows.jpeg" alt = "Simultaneous Windows on the City, Robert Delaunay, (c. 1912)" class = "myImg" role="button" onclick = "showInfo(this)"/>
+            <div class="info">
+                <h3 class="artName">Simultaneous</h3>
+                <br><br>
+                <p class="artDesc">Delaunay</p>
+                <p class="artDate">1912</p>
+            </div>
+        </div>
+
+        <div class="grid-item">
+            <img src="https://s2250677.edinburgh.domains/DWDWebsite2/images/WikimediaCommons/wnh.jpg" alt = "Windows and Hatches, Amadeu de Souza Cardoso, (c.1915-1916)" class = "myImg" role="button" onclick = "showInfo(this)"/>
+            <div class="info">
+                <h3 class="artName">Mountaineers</h3>
+                <br><br>
+                <p class="artDesc">de Souza Cardoso</p>
+                <p class="artDate">1915</p>
             </div>
         </div>
 

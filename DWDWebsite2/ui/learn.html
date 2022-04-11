@@ -45,6 +45,9 @@ session_start();
             top: 1.6vh;
             color:white;
             font-family: Tahoma, Arial, sans-serif;
+            font-size:16px;
+            width:auto;
+            line-height: normal;;
         }
 
         .one{
@@ -133,7 +136,7 @@ session_start();
     </ul>
 </nav>
 
-
+<!-- slider adapted from: https://github.com/elansx/Wholepage-Slider -->
 <div id="wholepage">
     <section class = "one">
         <div class="page">
@@ -145,28 +148,28 @@ session_start();
     <section class = "two">
         <div class="page">
             <h1>Style</h1>
-            <p>Cubism has a very distinct, open-form style characterized by the use of geometric shapes. It can be lined or lineless, with bold colors or without. This unique style inspired many other art movements like Futurism and Dadaism.</p>
+            <p class = "desc">Cubism has a very distinct, open-form style characterized by the use of geometric shapes. It can be lined or lineless, with bold colors or without. This unique style inspired many other art movements like Futurism and Dadaism.</p>
         </div>
     </section>
 
     <section class = "three">
         <div class="page">
             <h1>History</h1>
-            <p>Cubism arose in Europe in the early 1910s. This art style represented a different way of expressing the physical world— a way that was more abstract and reflected the strangeness of that era. In addition to paintings, Cubism has also been seen in architecture all over Europe. And while the style is over 100 years old, many artists still draw inspiration from it today.</p>
+            <p class = "desc">Cubism arose in Europe in the early 1910s. This art style represented a different way of expressing the physical world— a way that was more abstract and reflected the strangeness of that era. In addition to paintings, Cubism has also been seen in architecture all over Europe. And while the style is over 100 years old, many artists still draw inspiration from it today.</p>
         </div>
     </section>
 
     <section class = "four">
         <div class="page">
             <h1>Artists</h1>
-            <p>The most famous cubist artist is Pablo Picasso, a Spanish painter from the early 20th century. Other famous cubist artists include Metzinger, Miró, Braque, and Dalí, while Cézanne is widely considered the father of this movement. Each artist has their own distinct style. </p>
+            <p class = "desc">The most famous cubist artist is Pablo Picasso, a Spanish painter from the early 20th century. Other famous cubist artists include Metzinger, Miró, Braque, and Dalí, while Cézanne is widely considered the father of this movement. Each artist has their own distinct style. </p>
         </div>
     </section>
 
     <section class = "five">
         <div class="page">
             <h1>Explore</h1>
-            <p> Check out the art of some of these famous painters in our <a href="{{ @BASE }}/masterGallery" style = "font-family: Tahoma, Arial, sans-serif; color: #ee5919" > gallery!</a> </p>
+            <p class = "desc"> Check out the art of some of these famous painters in our <a href="{{ @BASE }}/masterGallery" style = "font-family: Tahoma, Arial, sans-serif; color: #ee5919" > gallery!</a> </p>
         </div>
     </section>
 </div>

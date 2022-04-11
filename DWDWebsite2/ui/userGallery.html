@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 ?>
 
 <!DOCTYPE html>
@@ -38,23 +39,24 @@ session_start();
             position: absolute;
             text-align: center;
             font-family: "Rammetto One", sans-serif;
+            width:100%;
 
         }
         .galleryArray h2{
             color: #1c1c1c;
             text-align: center;
+            font-size: 4vh
         }
 
         .grid {
-            width: 90%;
-            margin-left: 72px;
+            width: 100%;
             padding-top:20px;
             background-color: #DBCEBA;
 
         }
 
         .grid-item{
-            padding:10px;
+            padding:5px;
         }
 
         .grid-sizer,
@@ -65,7 +67,7 @@ session_start();
         .grid-item img {
             padding: 0;
             background: rgb(255, 255, 255);
-            border: 2px solid #2a2a2a;
+            border: 3px solid #2a2a2a;
         }
 
         .logo{
@@ -92,6 +94,17 @@ session_start();
             top: 1.6vh;
             color:white;
             font-family: Tahoma, Arial, sans-serif;
+        }
+
+        .galleryDesc{
+            color: #1e1e1e;
+            font-family: Tahoma, Arial, sans-serif;
+            width:60%;
+            line-height: 26pt;
+            text-align: center;
+            font-weight: bold;
+            margin: auto;
+            padding-bottom: 15px;
         }
     </style>
 </head>
@@ -124,6 +137,11 @@ session_start();
 
 <div class = "galleryArray">
     <h2>Community Gallery</h2>
+    <p class = "galleryDesc"> In this gallery, you will find artwork created by the CYOUbism community. Click on each image to see the titles and artists, or contribute some of your own art today using our
+        <a href="{{ @BASE }}/canvas" style = "font-family: Tahoma, Arial, sans-serif; color: #ee5919" > canvas tool</a> !</p>
+    <p class = "galleryDesc"> For more classic depictions of Cubism, check out the <a href="{{ @BASE }}/masterGallery" style = "font-family: Tahoma, Arial, sans-serif; color: #ee5919" > masters' gallery</a>  instead!</p>
+    <br>
+
     <div class="grid">
         <div class="grid-sizer"></div>
         <repeat group="{{ @dbData }}" value="{{ @record }}">

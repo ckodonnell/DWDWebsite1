@@ -31,9 +31,9 @@ session_start();
             bottom: 0;
             right: 0;
             padding: 0px;
-            text-align: right;
             background-color: #DBCEBA;
             background-size: 100%;
+            text-align:center;
             font-family: Tahoma, Arial, sans-serif
         }
 
@@ -148,7 +148,7 @@ session_start();
         <div class="container">
             <label>Choose an image to apply styles to:</label>
             <p></p>
-            <canvas id="image" url="/image.jpeg" width="348" height="348"></canvas>
+            <canvas id="image" url="https://s2250677.edinburgh.domains/DWDWebsite2/images/holder.png" width="348" height="348"></canvas>
             <p></p>
             <input type="file"
                    id="changeImage" name="changeImage"
@@ -158,11 +158,8 @@ session_start();
         <div class="container">
             <label>Choose the style image:</label>
             <p></p>
-            <canvas id="styleImage"  url="/style_transfer_image.jpeg"  width="348" height="348"></canvas>
+            <canvas id="styleImage"  url="https://s2250677.edinburgh.domains/DWDWebsite2/images/holder.png"  width="348" height="348"></canvas>
             <p></p>
-            <!-- <input type="file"
-                   id="changeStyleImage" name="changeImage"
-                   accept="image/png, image/jpeg" imgid="styleImage" > -->
 
             <select id = "changeStyleImage" name = "changeImage" class="centered custom-select" >
                 <option value="disabled"> Select style image </option>

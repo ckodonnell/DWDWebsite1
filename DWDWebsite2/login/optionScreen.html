@@ -19,14 +19,18 @@ session_start();
             -moz-osx-font-smoothing: grayscale;
             font-family: Tahoma, Arial, sans-serif;
         }
+
         body {
             background-color: #1c1c1c;
+            background-image: url("https://s2250677.edinburgh.domains/DWDWebsite2/images/circus.png");
+            background-repeat: no-repeat;
+            background-size: cover;
             text-align: center;
         }
 
         .logo{
             height: 10vh;
-            margin-top:13vh;
+            margin-top:14vh;
             padding-left:3.85vw;
         }
 
@@ -34,6 +38,7 @@ session_start();
             color:white;
             text-align: center;
             padding-top:50px;
+            font-weight: bold;
         }
 
         .loginButton{
@@ -122,9 +127,5 @@ session_start();
     <button onclick="location.href = 'register.html';"> Create an Account </button>
 </div>
 
-
-<div class = "logoutButton">
-    <button onclick="location.href = 'logout.php';"> Log Out </button>
-</div>
 </body>
 </html>

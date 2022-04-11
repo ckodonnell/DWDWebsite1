@@ -25,7 +25,7 @@ h1 {
     font-size: 1em;
     padding: 10px;
     color: #ffffff;
-    border: 2px solid #f89069;
+    /*border: 2px solid #f89069; */
     border-radius: 20px/50px;
     text-decoration: none;
     cursor: pointer;
